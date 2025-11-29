@@ -33,5 +33,6 @@ async def seed_admin():
     await mongo_db.close_mongo_connection()
 
 
+
 if __name__ == "__main__":
     asyncio.run(seed_admin())
