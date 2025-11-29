@@ -8,7 +8,6 @@ venv/
 data/
 datasets/
 checkpoints/
-models/
 *.h5
 *.pt
 *.pth
