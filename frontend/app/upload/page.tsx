@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import { useRouter } from 'next/navigation'
 import Image from "next/image"
-import { Upload, Loader2, CheckCircle2, XCircle, Camera, Edit, DollarSign } from 'lucide-react'
+import { Upload, Loader2, CheckCircle2, XCircle, Camera, Edit, DollarSign, Info } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -289,10 +289,21 @@ export default function UploadPage() {
           {/* Upload Section */}
           <Card className="border-2">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Camera className="h-5 w-5 text-primary" />
-                Image Upload
-              </CardTitle>
+              <div className="flex items-center justify-between">
+                <CardTitle className="flex items-center gap-2">
+                  <Camera className="h-5 w-5 text-primary" />
+                  Image Upload
+                </CardTitle>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="h-8 text-muted-foreground hover:text-foreground"
+                  onClick={() => router.push('/about')}
+                >
+                  <Info className="mr-2 h-4 w-4" />
+                  About
+                </Button>
+              </div>
               <CardDescription>
                 Select a clear image of your product
               </CardDescription>
