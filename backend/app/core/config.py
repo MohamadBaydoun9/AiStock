@@ -3,7 +3,7 @@ from pydantic_settings import BaseSettings
 from functools import lru_cache
 
 class Settings(BaseSettings):
-    PROJECT_NAME: str = "SmartStock AIi"
+    PROJECT_NAME: str = "SmartStock AI"
     API_V1_STR: str = ""
     
     # MongoDB

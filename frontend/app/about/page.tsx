@@ -26,7 +26,7 @@ export default function AboutPage() {
             "Parrot", "Canary", "Cockatiel", "Parakeet", "Finch"
         ],
         Monkey: [
-            "Capuchin", "Macaque", "Marmoset", "Spider Monkey", "Tamarin"
+            "Capuchin", "Macaque", "Marmoset", "Spider Monkey", "Tamarin1"
         ]
     }
 
