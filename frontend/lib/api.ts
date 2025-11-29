@@ -152,7 +152,7 @@ export const api = {
 
     // Product Types
     async getProductTypes(): Promise<ProductType[]> {
-        const response = await fetch(`${API_URL}/product-types`);
+        const response = await fetch(`${API_URL}/product-types/`);
         if (!response.ok) throw new Error("Failed to fetch product types");
         return response.json();
     },

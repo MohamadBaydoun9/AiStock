@@ -297,7 +297,7 @@ export default function UploadPage() {
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="h-8 text-muted-foreground hover:text-foreground"
+                  className="h-8 text-foreground hover:text-primary transition-all duration-300 hover:scale-105 hover:bg-primary/10 font-medium"
                   onClick={() => router.push('/about')}
                 >
                   <Info className="mr-2 h-4 w-4" />

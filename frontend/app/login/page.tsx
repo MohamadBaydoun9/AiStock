@@ -61,7 +61,7 @@ export default function LoginPage() {
                                 onChange={(e) => setEmail(e.target.value)}
                             />
                         </div>
-                        <div className="space-y-2">
+                        <div className="space-y-2 mb-4">
                             <div className="flex items-center">
                                 <Label htmlFor="password">Password</Label>
                                 <Link href="#" className="ml-auto text-sm underline">

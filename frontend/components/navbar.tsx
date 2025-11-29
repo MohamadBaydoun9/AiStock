@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname } from 'next/navigation'
 import { Package2, Upload, LayoutDashboard, Settings } from 'lucide-react'
 import { cn } from "@/lib/utils"
@@ -14,8 +15,13 @@ export function Navbar() {
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           <Link href="/dashboard" className="flex items-center gap-2 font-semibold text-lg">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary text-primary-foreground">
-              <Package2 className="h-5 w-5" />
+            <div className="relative h-14 w-22 overflow-hidden rounded-lg">
+              <Image
+                src="/logos/logo1.png"
+                alt="SmartStock AI Logo"
+                fill
+                className="object-cover"
+              />
             </div>
             <span className="text-balance">SmartStock AI</span>
           </Link>

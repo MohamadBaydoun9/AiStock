@@ -13,21 +13,8 @@ export const metadata: Metadata = {
   description: 'ML-powered product classification and price prediction for your inventory',
   generator: 'v0.app',
   icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
+    icon: '/logos/logo1.png',
+    apple: '/logos/logo1.png',
   },
 }
 
