@@ -29,7 +29,7 @@ ml/data
 .venv/
 
 frontend/node_modules
-frontend/.next
+
 
 ml/zips
 ml/test

@@ -1,0 +1,1098 @@
+[00:00:18.538] Server  LOG      ✓ Ready in 11.1s
+[04:04:49.436] Server  LOG      ○ Compiling / ...
+[04:04:53.093] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[04:04:53.215] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/dashboard" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en">
+                          <body
+                            className="font-sans antialiased"
+-                           __processed_1b1bfe82-fd3c-44a6-a4e2-0b5068010fa6__="true"
+                          >
+                  ...
+
+[04:04:53.216] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[04:04:53.216] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard","route":"/dashboard"}
+[04:04:53.216] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764350420831}
+[04:04:53.887] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[04:04:54.033] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/login" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en">
+                          <body
+                            className="font-sans antialiased"
+-                           __processed_a15b4285-0214-4034-8e98-57e0714c251d__="true"
+                          >
+                  ...
+
+[04:04:54.033] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[04:04:54.033] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/login","route":"/login"}
+[04:04:54.033] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764350421646}
+[04:05:23.214] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764350450824}
+[04:05:26.304] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/upload color: rgb(120, 120, 120) color: inherit {"dp":"/upload","o":"http://localhost:3000/upload","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764350453916}
+[04:05:51.742] Browser LOG     Backend response: {"confidence":0.9999251365661621,"existing_product":null,"exists":false,"price_predicted":500,"product_name":"African Wild Dog","product_type":"Dog"}
+[04:05:57.324] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/add-product color: rgb(120, 120, 120) color: inherit {"dp":"/add-product","o":"http://localhost:3000/add-product","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764350484935}
+[04:05:59.191] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764350486803}
+[04:06:01.123] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/upload color: rgb(120, 120, 120) color: inherit {"dp":"/upload","o":"http://localhost:3000/upload","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764350488737}
+[04:08:13.655] Server  LOG      ✓ Compiled in 594ms
+[04:09:57.928] Browser LOG     Backend response: {"confidence":0.9999861717224121,"existing_product":null,"exists":false,"price_predicted":500,"product_name":"African Wild Dog","product_type":"Dog"}
+[04:11:27.664] Browser LOG     Backend response: {"confidence":1,"existing_product":null,"exists":false,"price_predicted":500,"product_name":"Afghan","product_type":"Dog"}
+[04:11:58.728] Browser LOG     Backend response: {"confidence":1,"existing_product":null,"exists":false,"price_predicted":500,"product_name":"Afghan","product_type":"Dog"}
+[04:12:35.518] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings/product-types color: rgb(120, 120, 120) color: inherit {"dp":"/settings/product-types","o":"http://localhost:3000/settings/product-types","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764350883129}
+[04:12:37.730] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764350885343}
+[04:12:39.200] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/upload color: rgb(120, 120, 120) color: inherit {"dp":"/upload","o":"http://localhost:3000/upload","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764350886813}
+[04:12:51.445] Browser LOG     Backend response: {"confidence":0.9999980926513672,"existing_product":null,"exists":false,"price_predicted":500,"product_name":"Afghan","product_type":"Dog"}
+[04:13:43.165] Browser LOG     Backend response: {"confidence":0.9999998807907104,"existing_product":null,"exists":false,"price_predicted":500,"product_name":"Afghan","product_type":"Dog"}
+[04:14:31.067] Browser LOG     Backend response: {"confidence":1,"existing_product":null,"exists":false,"price_predicted":500,"product_name":"Afghan","product_type":"Dog"}
+[04:17:25.746] Browser LOG     Backend response: {"confidence":0.9291121363639832,"existing_product":null,"exists":false,"price_predicted":500,"product_name":"Abyssinian","product_type":"Cat"}
+[04:18:30.773] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/add-product color: rgb(120, 120, 120) color: inherit {"dp":"/add-product","o":"http://localhost:3000/add-product","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764351238382}
+[04:18:38.219] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764351245829}
+[04:18:56.888] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/products/acce62bd-92a3-4bcf-adbe-b687b9f32a90 color: rgb(120, 120, 120) color: inherit {"dp":"/products/[id]","o":"http://localhost:3000/products/acce62bd-92a3-4bcf-adbe-b687b9f32a90","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764351264504}
+[04:19:00.057] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/products/acce62bd-92a3-4bcf-adbe-b687b9f32a90/edit color: rgb(120, 120, 120) color: inherit {"dp":"/products/[id]/edit","o":"http://localhost:3000/products/acce62bd-92a3-4bcf-adbe-b687b9f32a90/edit","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764351267673}
+[04:19:02.748] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/products/acce62bd-92a3-4bcf-adbe-b687b9f32a90 color: rgb(120, 120, 120) color: inherit {"dp":"/products/[id]","o":"http://localhost:3000/products/acce62bd-92a3-4bcf-adbe-b687b9f32a90","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764351270363}
+[04:19:14.252] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/products/acce62bd-92a3-4bcf-adbe-b687b9f32a90/edit color: rgb(120, 120, 120) color: inherit {"dp":"/products/[id]/edit","o":"http://localhost:3000/products/acce62bd-92a3-4bcf-adbe-b687b9f32a90/edit","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764351281857}
+[04:21:34.131] Server  LOG      ✓ Compiled in 381ms
+[04:21:50.079] Server  LOG      ✓ Compiled in 44ms
+[04:24:19.379] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764351586986}
+[04:24:22.855] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/products/acce62bd-92a3-4bcf-adbe-b687b9f32a90/edit color: rgb(120, 120, 120) color: inherit {"dp":"/products/[id]/edit","o":"http://localhost:3000/products/acce62bd-92a3-4bcf-adbe-b687b9f32a90/edit","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764351590472}
+[04:24:39.361] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/products/acce62bd-92a3-4bcf-adbe-b687b9f32a90 color: rgb(120, 120, 120) color: inherit {"dp":"/products/[id]","o":"http://localhost:3000/products/acce62bd-92a3-4bcf-adbe-b687b9f32a90","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764351606978}
+[04:25:40.622] Server  LOG      ✓ Compiled in 164ms
+[04:26:39.949] Browser ERROR   Delete error: {}
+[04:26:39.949] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764351727559}
+[04:26:45.704] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[04:26:45.872] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/dashboard" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en">
+                          <body
+                            className="font-sans antialiased"
+-                           __processed_70760c3b-c45e-4730-9526-f679510d830f__="true"
+                          >
+                  ...
+
+[04:26:45.872] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[04:26:45.872] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard","route":"/dashboard"}
+[04:26:45.872] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764351733489}
+[04:26:46.741] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/upload color: rgb(120, 120, 120) color: inherit {"dp":"/upload","o":"http://localhost:3000/upload","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764351734354}
+[04:26:55.595] Browser LOG     Backend response: {"confidence":0.9966269731521606,"existing_product":null,"exists":false,"price_predicted":500,"product_name":"Abyssinian","product_type":"Cat"}
+[04:27:10.912] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/add-product color: rgb(120, 120, 120) color: inherit {"dp":"/add-product","o":"http://localhost:3000/add-product","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764351758521}
+[04:27:16.372] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764351763980}
+[04:27:23.062] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings/product-types color: rgb(120, 120, 120) color: inherit {"dp":"/settings/product-types","o":"http://localhost:3000/settings/product-types","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764351770678}
+[04:27:24.620] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764351772231}
+[04:27:25.068] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/upload color: rgb(120, 120, 120) color: inherit {"dp":"/upload","o":"http://localhost:3000/upload","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764351772681}
+[04:27:25.777] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764351773387}
+[04:27:26.924] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings/product-types color: rgb(120, 120, 120) color: inherit {"dp":"/settings/product-types","o":"http://localhost:3000/settings/product-types","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764351774539}
+[04:27:27.995] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/upload color: rgb(120, 120, 120) color: inherit {"dp":"/upload","o":"http://localhost:3000/upload","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764351775605}
+[04:27:29.262] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764351776874}
+[04:27:31.537] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings/product-types color: rgb(120, 120, 120) color: inherit {"dp":"/settings/product-types","o":"http://localhost:3000/settings/product-types","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764351779149}
+[04:27:33.062] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764351780672}
+[04:27:33.297] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/upload color: rgb(120, 120, 120) color: inherit {"dp":"/upload","o":"http://localhost:3000/upload","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764351780909}
+[04:27:33.904] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764351781517}
+[04:27:34.879] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/upload color: rgb(120, 120, 120) color: inherit {"dp":"/upload","o":"http://localhost:3000/upload","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764351782490}
+[04:27:35.407] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764351783017}
+[04:27:40.675] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807 color: rgb(120, 120, 120) color: inherit {"dp":"/products/[id]","o":"http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764351788291}
+[04:29:27.205] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807/edit color: rgb(120, 120, 120) color: inherit {"dp":"/products/[id]/edit","o":"http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807/edit","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764351894808}
+[04:29:27.588] Browser ERROR   Fetch error: {}
+[04:29:27.588] Browser ERROR   Fetch error: {}
+[04:29:27.588] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764351895201}
+[04:38:22.524] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[04:38:22.663] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/dashboard" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en">
+                          <body
+                            className="font-sans antialiased"
+-                           __processed_4d9a4211-336c-4ebc-b317-9b35ed98ad92__="true"
+                          >
+                  ...
+
+[04:38:22.663] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[04:38:22.663] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard","route":"/dashboard"}
+[04:38:22.663] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764352430277}
+[04:38:23.062] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[04:38:23.199] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/login" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en">
+                          <body
+                            className="font-sans antialiased"
+-                           __processed_79d448ae-36de-4c0b-b279-37a9027ec5f0__="true"
+                          >
+                  ...
+
+[04:38:23.199] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[04:38:23.199] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/login","route":"/login"}
+[04:38:23.200] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764352430817}
+[04:38:58.277] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764352465889}
+[04:39:02.052] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807 color: rgb(120, 120, 120) color: inherit {"dp":"/products/[id]","o":"http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764352469668}
+[04:39:02.908] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807/edit color: rgb(120, 120, 120) color: inherit {"dp":"/products/[id]/edit","o":"http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807/edit","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764352470412}
+[04:39:02.908] Browser ERROR   Fetch error: {}
+[04:39:02.908] Browser ERROR   Fetch error: {}
+[04:39:02.908] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764352470518}
+[04:39:10.804] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807 color: rgb(120, 120, 120) color: inherit {"dp":"/products/[id]","o":"http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764352478415}
+[04:39:13.205] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807/edit color: rgb(120, 120, 120) color: inherit {"dp":"/products/[id]/edit","o":"http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807/edit","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764352480743}
+[04:39:13.205] Browser ERROR   Fetch error: {}
+[04:39:13.205] Browser ERROR   Fetch error: {}
+[04:39:13.205] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764352480818}
+[04:41:32.904] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807 color: rgb(120, 120, 120) color: inherit {"dp":"/products/[id]","o":"http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764352620521}
+[04:41:34.408] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807/edit color: rgb(120, 120, 120) color: inherit {"dp":"/products/[id]/edit","o":"http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807/edit","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764352621945}
+[04:41:34.408] Browser ERROR   Fetch error: {}
+[04:41:34.408] Browser ERROR   Fetch error: {}
+[04:41:34.408] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764352622017}
+[04:41:41.308] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[04:41:41.488] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/dashboard" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en">
+                          <body
+                            className="font-sans antialiased"
+-                           __processed_ed5b3acc-5a12-45cb-8952-8e16ad0ae86f__="true"
+                          >
+                  ...
+
+[04:41:41.488] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[04:41:41.488] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard","route":"/dashboard"}
+[04:41:41.488] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764352629105}
+[04:41:43.075] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807/edit color: rgb(120, 120, 120) color: inherit {"dp":"/products/[id]/edit","o":"http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807/edit","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764352630573}
+[04:41:43.075] Browser ERROR   Fetch error: {}
+[04:41:43.075] Browser ERROR   Fetch error: {}
+[04:41:43.075] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764352630680}
+[04:41:52.038] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807/edit color: rgb(120, 120, 120) color: inherit {"dp":"/products/[id]/edit","o":"http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807/edit","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764352639557}
+[04:41:52.038] Browser ERROR   Fetch error: {}
+[04:41:52.038] Browser ERROR   Fetch error: {}
+[04:41:52.038] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764352639645}
+[04:42:42.446] Server  LOG      ✓ Compiled in 87ms
+[04:46:17.785] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[04:46:17.918] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[04:46:17.918] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard","route":"/dashboard"}
+[04:46:17.918] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764352905535}
+[04:46:19.452] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/upload color: rgb(120, 120, 120) color: inherit {"dp":"/upload","o":"http://localhost:3000/upload","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764352907067}
+[04:46:20.118] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764352907726}
+[04:46:21.221] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807/edit color: rgb(120, 120, 120) color: inherit {"dp":"/products/[id]/edit","o":"http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807/edit","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764352908836}
+[04:46:24.603] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764352912214}
+[04:46:26.755] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807/edit color: rgb(120, 120, 120) color: inherit {"dp":"/products/[id]/edit","o":"http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807/edit","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764352914371}
+[04:46:29.889] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764352917501}
+[04:46:31.924] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807/edit color: rgb(120, 120, 120) color: inherit {"dp":"/products/[id]/edit","o":"http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807/edit","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764352919541}
+[04:46:35.990] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807 color: rgb(120, 120, 120) color: inherit {"dp":"/products/[id]","o":"http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764352923606}
+[04:46:39.014] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/upload color: rgb(120, 120, 120) color: inherit {"dp":"/upload","o":"http://localhost:3000/upload","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764352926626}
+[04:46:45.596] Browser LOG     Backend response: {"confidence":0.9966269731521606,"existing_product":null,"exists":false,"price_predicted":500,"product_name":"Abyssinian","product_type":"Cat"}
+[04:47:07.578] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/add-product color: rgb(120, 120, 120) color: inherit {"dp":"/add-product","o":"http://localhost:3000/add-product","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764352955188}
+[04:47:14.142] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764352961752}
+[04:47:18.875] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807 color: rgb(120, 120, 120) color: inherit {"dp":"/products/[id]","o":"http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764352966491}
+[04:47:22.102] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764352969714}
+[04:47:24.027] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/products/889ddbdd-400f-44bb-8377-94d4b2df3745 color: rgb(120, 120, 120) color: inherit {"dp":"/products/[id]","o":"http://localhost:3000/products/889ddbdd-400f-44bb-8377-94d4b2df3745","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764352971642}
+[04:47:25.366] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764352972978}
+[04:47:27.075] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807/edit color: rgb(120, 120, 120) color: inherit {"dp":"/products/[id]/edit","o":"http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807/edit","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764352974692}
+[04:47:29.607] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807 color: rgb(120, 120, 120) color: inherit {"dp":"/products/[id]","o":"http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764352977223}
+[04:49:25.032] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807/edit color: rgb(120, 120, 120) color: inherit {"dp":"/products/[id]/edit","o":"http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807/edit","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764353092649}
+[04:49:28.721] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764353096331}
+[04:49:31.279] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807 color: rgb(120, 120, 120) color: inherit {"dp":"/products/[id]","o":"http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764353098895}
+[04:49:49.824] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764353117437}
+[04:54:14.028] Server  LOG      ✓ Compiled in 388ms
+[04:56:07.592] Server  LOG      ✓ Compiled in 170ms
+[05:04:09.880] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[05:04:10.047] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/shop" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en">
+                          <body
+                            className="font-sans antialiased"
+-                           __processed_7783a7c4-bea9-4ad4-96ff-00afc37fc051__="true"
+                          >
+                  ...
+
+[05:04:10.047] Browser ERROR   uncaughtError: Error: A <Select.Item /> must have a value prop that is not an empty string. This is because the Select value can be set to an empty string to clear the selection and show the placeholder.
+[05:04:48.300] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[05:04:48.589] Server  LOG      ✓ Compiled in 49ms
+[05:04:48.714] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[05:04:48.945] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[05:04:48.945] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/shop","route":"/shop"}
+[05:04:48.945] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/shop color: rgb(120, 120, 120) color: inherit {"dp":"/shop","o":"http://localhost:3000/shop","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764354016562}
+[05:04:51.431] Server  LOG      ✓ Compiled in 62ms
+[05:04:54.549] Server  LOG      ✓ Compiled in 49ms
+[05:04:56.411] Server  LOG      ✓ Compiled in 55ms
+[05:05:12.278] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764354039893}
+[05:05:18.657] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807 color: rgb(120, 120, 120) color: inherit {"dp":"/products/[id]","o":"http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764354046272}
+[05:05:24.096] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764354051705}
+[05:05:25.435] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807/edit color: rgb(120, 120, 120) color: inherit {"dp":"/products/[id]/edit","o":"http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807/edit","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764354053051}
+[05:05:28.623] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807 color: rgb(120, 120, 120) color: inherit {"dp":"/products/[id]","o":"http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764354056240}
+[05:05:51.242] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764354078855}
+[05:06:52.340] Server  LOG      ✓ Compiled in 102ms
+[05:06:54.296] Server  LOG      ✓ Compiled in 47ms
+[05:07:08.787] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/shop color: rgb(120, 120, 120) color: inherit {"dp":"/shop","o":"http://localhost:3000/shop","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764354156393}
+[05:07:12.599] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[05:07:12.730] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/shop/f14d..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en">
+                          <body
+                            className="font-sans antialiased"
+-                           __processed_906e9f76-c2e1-40aa-9d26-b7e687b6f1d5__="true"
+                          >
+                  ...
+
+[05:07:12.730] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[05:07:12.730] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/shop/f14d5fdd-53fc-4700-b4a7-dae86f3a1807","route":"/shop/f14d5fdd-53fc-4700-b4a7-dae86f3a1807"}
+[05:07:12.730] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/shop/f14d5fdd-53fc-4700-b4a7-dae86f3a1807 color: rgb(120, 120, 120) color: inherit {"dp":"/shop/f14d5fdd-53fc-4700-b4a7-dae86f3a1807","o":"http://localhost:3000/shop/f14d5fdd-53fc-4700-b4a7-dae86f3a1807","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764354160348}
+[05:07:13.839] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764354161452}
+[05:07:15.183] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/shop color: rgb(120, 120, 120) color: inherit {"dp":"/shop","o":"http://localhost:3000/shop","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764354162790}
+[05:07:38.056] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[05:07:38.210] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/shop/f14d..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en">
+                          <body
+                            className="font-sans antialiased"
+-                           __processed_08de2086-7bb8-443a-be9a-8c97bf7cb047__="true"
+                          >
+                  ...
+
+[05:07:38.210] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[05:07:38.210] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/shop/f14d5fdd-53fc-4700-b4a7-dae86f3a1807","route":"/shop/f14d5fdd-53fc-4700-b4a7-dae86f3a1807"}
+[05:07:38.210] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/shop/f14d5fdd-53fc-4700-b4a7-dae86f3a1807 color: rgb(120, 120, 120) color: inherit {"dp":"/shop/f14d5fdd-53fc-4700-b4a7-dae86f3a1807","o":"http://localhost:3000/shop/f14d5fdd-53fc-4700-b4a7-dae86f3a1807","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764354185812}
+[05:07:39.431] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764354187044}
+[05:08:50.097] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[05:08:50.276] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/dashboard" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en">
+                          <body
+                            className="font-sans antialiased"
+-                           __processed_b25bd545-62fd-4093-aa27-e1379d763aa1__="true"
+                          >
+                  ...
+
+[05:08:50.276] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[05:08:50.276] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard","route":"/dashboard"}
+[05:08:50.276] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764354257893}
+[05:08:51.904] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/shop color: rgb(120, 120, 120) color: inherit {"dp":"/shop","o":"http://localhost:3000/shop","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764354259509}
+[05:09:53.983] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764354321594}
+[05:09:54.663] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[05:09:54.796] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[05:09:54.796] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/login","route":"/login"}
+[05:09:54.796] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764354322411}
+[05:09:56.667] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/upload color: rgb(120, 120, 120) color: inherit {"dp":"/upload","o":"http://localhost:3000/upload","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764354324226}
+[05:09:56.667] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764354324284}
+[15:28:37.641] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764391440712}
+[15:28:45.239] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/shop color: rgb(120, 120, 120) color: inherit {"dp":"/shop","o":"http://localhost:3000/shop","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764391448294}
+[15:28:45.912] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764391448978}
+[15:28:46.459] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/shop color: rgb(120, 120, 120) color: inherit {"dp":"/shop","o":"http://localhost:3000/shop","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764391449523}
+[15:29:10.502] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[15:29:10.682] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/shop/f14d..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en">
+                          <body
+                            className="font-sans antialiased"
+-                           __processed_2d473508-af13-412a-b43d-2090ad212708__="true"
+                          >
+                  ...
+
+[15:29:10.784] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[15:29:10.784] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/shop/f14d5fdd-53fc-4700-b4a7-dae86f3a1807","route":"/shop/f14d5fdd-53fc-4700-b4a7-dae86f3a1807"}
+[15:29:10.784] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/shop/f14d5fdd-53fc-4700-b4a7-dae86f3a1807 color: rgb(120, 120, 120) color: inherit {"dp":"/shop/f14d5fdd-53fc-4700-b4a7-dae86f3a1807","o":"http://localhost:3000/shop/f14d5fdd-53fc-4700-b4a7-dae86f3a1807","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764391473858}
+[15:29:13.960] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764391477006}
+[15:29:18.222] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/shop color: rgb(120, 120, 120) color: inherit {"dp":"/shop","o":"http://localhost:3000/shop","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764391481265}
+[15:29:19.551] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[15:29:19.784] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/shop/f14d..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en">
+                          <body
+                            className="font-sans antialiased"
+-                           __processed_7f90928a-c2fd-4125-8cd2-a308434d86fa__="true"
+                          >
+                  ...
+
+[15:29:19.785] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[15:29:19.785] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/shop/f14d5fdd-53fc-4700-b4a7-dae86f3a1807","route":"/shop/f14d5fdd-53fc-4700-b4a7-dae86f3a1807"}
+[15:29:19.785] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/shop/f14d5fdd-53fc-4700-b4a7-dae86f3a1807 color: rgb(120, 120, 120) color: inherit {"dp":"/shop/f14d5fdd-53fc-4700-b4a7-dae86f3a1807","o":"http://localhost:3000/shop/f14d5fdd-53fc-4700-b4a7-dae86f3a1807","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764391482854}
+[15:29:21.546] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764391484591}
+[15:29:22.934] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/shop color: rgb(120, 120, 120) color: inherit {"dp":"/shop","o":"http://localhost:3000/shop","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764391485971}
+[15:30:11.286] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764391534342}
+[15:30:18.990] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807/edit color: rgb(120, 120, 120) color: inherit {"dp":"/products/[id]/edit","o":"http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807/edit","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764391542000}
+[15:30:23.938] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807 color: rgb(120, 120, 120) color: inherit {"dp":"/products/[id]","o":"http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764391547007}
+[15:30:31.560] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807/edit color: rgb(120, 120, 120) color: inherit {"dp":"/products/[id]/edit","o":"http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807/edit","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764391554633}
+[15:30:34.636] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764391557688}
+[15:30:37.865] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807 color: rgb(120, 120, 120) color: inherit {"dp":"/products/[id]","o":"http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764391560927}
+[15:36:36.077] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[15:36:36.225] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/products/..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en">
+                          <body
+                            className="font-sans antialiased"
+-                           __processed_0727cc6c-e83d-4a9e-a37e-1d02ae3f52f0__="true"
+                          >
+                  ...
+
+[15:36:36.225] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[15:36:36.225] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807","route":"/products/[id]"}
+[15:36:36.225] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807 color: rgb(120, 120, 120) color: inherit {"dp":"/products/[id]","o":"http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764391919297}
+[15:36:38.312] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807/edit color: rgb(120, 120, 120) color: inherit {"dp":"/products/[id]/edit","o":"http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807/edit","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764391921382}
+[15:36:46.768] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764391929842}
+[15:36:47.182] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/upload color: rgb(120, 120, 120) color: inherit {"dp":"/upload","o":"http://localhost:3000/upload","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764391930254}
+[15:36:56.297] Browser LOG     Backend response: {"confidence":0.9966269731521606,"existing_product":null,"exists":false,"price_predicted":500,"product_name":"Abyssinian","product_type":"Cat"}
+[15:45:54.895] Server  LOG      ✓ Compiled in 263ms
+[15:46:30.663] Server  LOG      ✓ Compiled in 143ms
+[16:22:50.548] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[16:22:50.725] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/upload" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en">
+                          <body
+                            className="font-sans antialiased"
+-                           __processed_1e46c4b0-5de7-433a-84fe-6296475d6a30__="true"
+                          >
+                  ...
+
+[16:22:50.725] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[16:22:50.725] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/upload","route":"/upload"}
+[16:22:50.725] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/upload color: rgb(120, 120, 120) color: inherit {"dp":"/upload","o":"http://localhost:3000/upload","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764394693798}
+[16:22:51.213] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[16:22:51.357] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/login" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en">
+                          <body
+                            className="font-sans antialiased"
+-                           __processed_5cd14736-ca48-4056-9c1c-774093a9c21a__="true"
+                          >
+                  ...
+
+[16:22:51.357] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[16:22:51.357] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/login","route":"/login"}
+[16:22:51.357] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764394694432}
+[16:23:52.753] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764394755822}
+[16:23:55.069] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/upload color: rgb(120, 120, 120) color: inherit {"dp":"/upload","o":"http://localhost:3000/upload","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764394758140}
+[16:24:01.068] Browser LOG     Backend response: {"confidence":0.9966269731521606,"existing_product":null,"exists":false,"price_predicted":500,"product_name":"Abyssinian","product_type":"Cat"}
+[16:25:41.225] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/add-product color: rgb(120, 120, 120) color: inherit {"dp":"/add-product","o":"http://localhost:3000/add-product","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764394864292}
+[16:25:45.922] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764394868988}
+[16:25:51.990] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/products/c6189aed-0344-4e3c-8f17-acf773a9cc18 color: rgb(120, 120, 120) color: inherit {"dp":"/products/[id]","o":"http://localhost:3000/products/c6189aed-0344-4e3c-8f17-acf773a9cc18","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764394875063}
+[16:25:54.835] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764394877902}
+[16:25:56.939] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807 color: rgb(120, 120, 120) color: inherit {"dp":"/products/[id]","o":"http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764394880011}
+[16:25:58.077] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807/edit color: rgb(120, 120, 120) color: inherit {"dp":"/products/[id]/edit","o":"http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807/edit","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764394881150}
+[16:26:43.748] Server  LOG      ✓ Compiled in 337ms
+[16:27:00.560] Server  LOG      ✓ Compiled in 86ms
+[16:27:56.002] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764394999071}
+[16:28:00.471] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/shop color: rgb(120, 120, 120) color: inherit {"dp":"/shop","o":"http://localhost:3000/shop","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764395003539}
+[16:28:33.997] Server  LOG      ✓ Compiled in 464ms
+[16:30:53.530] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764395176597}
+[16:30:54.511] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/upload color: rgb(120, 120, 120) color: inherit {"dp":"/upload","o":"http://localhost:3000/upload","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764395177580}
+[16:30:57.615] Server  LOG      ✓ Compiled in 85ms
+[16:31:41.679] Browser LOG     Backend response: {"confidence":0.9966269731521606,"existing_product":null,"exists":false,"price_predicted":500,"product_name":"Abyssinian","product_type":"Cat"}
+[16:32:14.261] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/add-product color: rgb(120, 120, 120) color: inherit {"dp":"/add-product","o":"http://localhost:3000/add-product","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764395257330}
+[16:32:18.153] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764395261222}
+[16:32:23.312] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/upload color: rgb(120, 120, 120) color: inherit {"dp":"/upload","o":"http://localhost:3000/upload","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764395266384}
+[16:32:24.364] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings/product-types color: rgb(120, 120, 120) color: inherit {"dp":"/settings/product-types","o":"http://localhost:3000/settings/product-types","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764395267435}
+[16:32:25.885] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764395268951}
+[16:32:26.389] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/shop color: rgb(120, 120, 120) color: inherit {"dp":"/shop","o":"http://localhost:3000/shop","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764395269454}
+[17:13:37.798] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[17:13:38.053] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/shop" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en">
+                          <body
+                            className="font-sans antialiased"
+-                           __processed_34ef4565-4f51-4b74-9bcc-25326554441e__="true"
+                          >
+                  ...
+
+[17:13:38.053] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[17:13:38.053] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/shop","route":"/shop"}
+[17:13:38.053] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/shop color: rgb(120, 120, 120) color: inherit {"dp":"/shop","o":"http://localhost:3000/shop","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764397741126}
+[17:13:38.788] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[17:13:38.937] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/login" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en">
+                          <body
+                            className="font-sans antialiased"
+-                           __processed_ececb519-cb56-4568-baf6-2cea45eea0b0__="true"
+                          >
+                  ...
+
+[17:13:38.937] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[17:13:38.937] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/login","route":"/login"}
+[17:13:38.937] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764397742011}
+[17:13:49.137] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764397752208}
+[17:15:22.362] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807 color: rgb(120, 120, 120) color: inherit {"dp":"/products/[id]","o":"http://localhost:3000/products/f14d5fdd-53fc-4700-b4a7-dae86f3a1807","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764397845435}
+[17:15:24.145] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764397847212}
+[17:15:30.684] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/products/e8bf8fae-95f9-487f-a959-6a77c4e083c0 color: rgb(120, 120, 120) color: inherit {"dp":"/products/[id]","o":"http://localhost:3000/products/e8bf8fae-95f9-487f-a959-6a77c4e083c0","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764397853756}
+[17:15:33.053] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764397856119}
+[17:25:49.668] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings/product-types color: rgb(120, 120, 120) color: inherit {"dp":"/settings/product-types","o":"http://localhost:3000/settings/product-types","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764398472737}
+[17:26:43.861] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[17:26:44.052] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[17:26:44.052] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/settings/product-types","route":"/settings/product-types"}
+[17:26:44.053] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings/product-types color: rgb(120, 120, 120) color: inherit {"dp":"/settings/product-types","o":"http://localhost:3000/settings/product-types","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764398527124}
+[17:26:44.916] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764398527976}
+[17:26:45.977] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/upload color: rgb(120, 120, 120) color: inherit {"dp":"/upload","o":"http://localhost:3000/upload","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764398529047}
+[17:26:48.207] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764398531270}
+[17:26:48.620] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings/product-types color: rgb(120, 120, 120) color: inherit {"dp":"/settings/product-types","o":"http://localhost:3000/settings/product-types","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764398531693}
+[17:26:49.098] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764398532166}
+[17:26:49.431] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/upload color: rgb(120, 120, 120) color: inherit {"dp":"/upload","o":"http://localhost:3000/upload","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764398532502}
+[17:26:49.909] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings/product-types color: rgb(120, 120, 120) color: inherit {"dp":"/settings/product-types","o":"http://localhost:3000/settings/product-types","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764398532983}
+[17:26:50.238] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764398533306}
+[17:26:50.492] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/upload color: rgb(120, 120, 120) color: inherit {"dp":"/upload","o":"http://localhost:3000/upload","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764398533558}
+[17:26:51.928] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764398534997}
+[17:26:52.801] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings/product-types color: rgb(120, 120, 120) color: inherit {"dp":"/settings/product-types","o":"http://localhost:3000/settings/product-types","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764398535873}
+[17:30:50.515] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/upload color: rgb(120, 120, 120) color: inherit {"dp":"/upload","o":"http://localhost:3000/upload","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764398773585}
+[17:31:11.627] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764398794691}
+[17:35:01.388] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/upload color: rgb(120, 120, 120) color: inherit {"dp":"/upload","o":"http://localhost:3000/upload","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764399024457}
+[17:39:40.182] Server  LOG      ✓ Compiled in 69ms
+[17:39:49.375] Server  LOG      ✓ Compiled in 60ms
+[17:40:42.346] Server  LOG      ✓ Compiled in 637ms
+[17:41:24.148] Server  LOG      ✓ Compiled in 0ms
+[17:41:46.837] Server  LOG      ✓ Compiled in 359ms
+[17:41:56.324] Server  LOG      ✓ Compiled in 63ms
+[17:54:00.159] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[17:54:00.310] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/upload" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en">
+                          <body
+                            className="font-sans antialiased"
+-                           __processed_68439857-ce94-4c43-b9fb-9ad14e7a6364__="true"
+                          >
+                  ...
+
+[17:54:00.310] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[17:54:00.310] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/upload","route":"/upload"}
+[17:54:00.310] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/upload color: rgb(120, 120, 120) color: inherit {"dp":"/upload","o":"http://localhost:3000/upload","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764400163385}
+[17:54:01.079] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[17:54:01.221] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/login" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en">
+                          <body
+                            className="font-sans antialiased"
+-                           __processed_a0c86b9b-4540-4764-a12e-c45006511db1__="true"
+                          >
+                  ...
+
+[17:54:01.221] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[17:54:01.221] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/login","route":"/login"}
+[17:54:01.221] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764400164295}
+[17:54:13.156] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764400176227}
+[17:54:16.607] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/admin/stats color: rgb(120, 120, 120) color: inherit {"dp":"/admin/stats","o":"http://localhost:3000/admin/stats","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764400179676}
+[17:54:21.789] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764400184855}
+[17:54:24.207] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings/product-types color: rgb(120, 120, 120) color: inherit {"dp":"/settings/product-types","o":"http://localhost:3000/settings/product-types","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764400187280}
+[17:54:25.134] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764400188201}
+[17:54:26.710] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/upload color: rgb(120, 120, 120) color: inherit {"dp":"/upload","o":"http://localhost:3000/upload","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764400189783}
+[17:54:35.964] Browser LOG     Backend response: {"confidence":0.9966269731521606,"existing_product":null,"exists":false,"price_predicted":500,"product_name":"AMERICAN GOLDFINCH","product_type":"Bird"}
+[17:54:56.001] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/add-product color: rgb(120, 120, 120) color: inherit {"dp":"/add-product","o":"http://localhost:3000/add-product","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764400219069}
+[17:55:00.665] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764400223734}
+[17:55:03.746] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/admin/stats color: rgb(120, 120, 120) color: inherit {"dp":"/admin/stats","o":"http://localhost:3000/admin/stats","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764400226820}
+[17:55:21.097] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764400244164}
+[17:55:22.714] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings/product-types color: rgb(120, 120, 120) color: inherit {"dp":"/settings/product-types","o":"http://localhost:3000/settings/product-types","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764400245787}
+[17:55:24.024] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/upload color: rgb(120, 120, 120) color: inherit {"dp":"/upload","o":"http://localhost:3000/upload","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764400247095}
+[17:55:30.818] Browser LOG     Backend response: {"confidence":0.9966269731521606,"existing_product":null,"exists":false,"price_predicted":500,"product_name":"AMERICAN GOLDFINCH","product_type":"Bird"}
+[17:55:42.422] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[17:55:42.558] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/upload" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en">
+                          <body
+                            className="font-sans antialiased"
+-                           __processed_5a0beaf6-2a55-4e44-989e-bb16c565e267__="true"
+                          >
+                  ...
+
+[17:55:42.558] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[17:55:42.558] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/upload","route":"/upload"}
+[17:55:42.558] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/upload color: rgb(120, 120, 120) color: inherit {"dp":"/upload","o":"http://localhost:3000/upload","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764400265628}
+[17:56:48.694] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[17:56:48.848] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/about" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en">
+                          <body
+                            className="font-sans antialiased"
+-                           __processed_c83f3be1-5433-4ebd-b525-8d66663c7c73__="true"
+                          >
+                  ...
+
+[17:56:48.848] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[17:56:48.848] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/about","route":"/about"}
+[17:56:48.848] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/about color: rgb(120, 120, 120) color: inherit {"dp":"/about","o":"http://localhost:3000/about","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764400331923}
+[17:57:22.067] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[17:57:22.222] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[17:57:22.222] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/upload","route":"/upload"}
+[17:57:22.222] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/upload color: rgb(120, 120, 120) color: inherit {"dp":"/upload","o":"http://localhost:3000/upload","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764400365287}
+[17:57:26.350] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764400369419}
+[17:57:31.095] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/admin/stats color: rgb(120, 120, 120) color: inherit {"dp":"/admin/stats","o":"http://localhost:3000/admin/stats","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764400374170}
+[17:57:53.588] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764400396656}
+[17:57:55.107] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/upload color: rgb(120, 120, 120) color: inherit {"dp":"/upload","o":"http://localhost:3000/upload","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764400398178}
+[17:57:59.997] Browser LOG     Backend response: {"confidence":0.5203896164894104,"existing_product":null,"exists":false,"price_predicted":500,"product_name":"AMERICAN GOLDFINCH","product_type":"Bird"}
+[17:58:24.361] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/add-product color: rgb(120, 120, 120) color: inherit {"dp":"/add-product","o":"http://localhost:3000/add-product","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764400427431}
+[17:58:35.707] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764400438776}
+[17:58:37.967] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/admin/stats color: rgb(120, 120, 120) color: inherit {"dp":"/admin/stats","o":"http://localhost:3000/admin/stats","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764400441037}
+[18:01:03.752] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764400586818}
+[18:01:04.140] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/upload color: rgb(120, 120, 120) color: inherit {"dp":"/upload","o":"http://localhost:3000/upload","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764400587212}
