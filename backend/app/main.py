@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.core.config import get_settings
 from app.db.mongo import mongo_db
-from app.api import routes_auth, routes_products, routes_stats, routes_ml_stub, routes_product_types, routes_price
+from app.api import routes_auth, routes_products, routes_stats, routes_ml_stub, routes_product_types, routes_price, routes_train
 
 settings = get_settings()
 
@@ -33,6 +33,8 @@ app.include_router(routes_stats.router, prefix="/stats", tags=["stats"])
 app.include_router(routes_ml_stub.router, prefix="/ml", tags=["ml"])
 app.include_router(routes_product_types.router, prefix="/product-types", tags=["product-types"])
 app.include_router(routes_price.router, prefix="/ml", tags=["price-prediction"])
+app.include_router(routes_train.router, prefix="/train", tags=["training"])
+
 
 @app.get("/")
 async def root():

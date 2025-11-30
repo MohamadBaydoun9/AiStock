@@ -3,7 +3,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from 'next/navigation'
-import { Package2, Upload, LayoutDashboard, Settings } from 'lucide-react'
+import { Package2, Upload, LayoutDashboard, Settings, Brain } from 'lucide-react'
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 
@@ -57,6 +57,17 @@ export function Navbar() {
               <Link href="/settings/product-types" className="flex items-center gap-2">
                 <Settings className="h-4 w-4" />
                 <span className="hidden sm:inline">Manage Types</span>
+              </Link>
+            </Button>
+
+            <Button
+              variant={pathname === "/admin/train" ? "default" : "ghost"}
+              size="sm"
+              asChild
+            >
+              <Link href="/admin/train" className="flex items-center gap-2">
+                <Brain className="h-4 w-4" />
+                <span className="hidden sm:inline">Train Model</span>
               </Link>
             </Button>
           </div>

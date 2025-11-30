@@ -14,16 +14,20 @@ if gpus:
     try:
         for gpu in gpus:
             tf.config.experimental.set_memory_growth(gpu, True)
-        print(f"✅ GPU Detected: {len(gpus)} device(s)")
+        print(f"GPU Detected: {len(gpus)} device(s)")
     except RuntimeError as e:
         print(f"GPU setup error: {e}")
 else:
-    print("⚠️  No GPU detected - training will use CPU")
+    print("No GPU detected - training will use CPU")
 
 import config
 from data_loader import create_data_generators, get_class_weights
 from model import get_callbacks
 import json
+import sys
+
+# Force UTF-8 for Windows consoles/logs
+sys.stdout.reconfigure(encoding='utf-8')
 
 def fine_tune_existing_model():
     """
@@ -35,23 +39,37 @@ def fine_tune_existing_model():
     
     # Check if existing model exists
     if not os.path.exists(config.MODEL_PATH):
-        print(f"❌ ERROR: No existing model found at {config.MODEL_PATH}")
+        print(f"ERROR: No existing model found at {config.MODEL_PATH}")
         print("Please train the initial model first using train.py")
         return
     
-    print(f"\n✓ Found existing model at {config.MODEL_PATH}")
+    print(f"\nFound existing model at {config.MODEL_PATH}")
     
     # Load existing model
-    print("\n📦 Loading existing model...")
+    print("\nLoading existing model...")
     model = keras.models.load_model(config.MODEL_PATH)
-    print("✓ Model loaded successfully")
+    print("Model loaded successfully")
     
     # Create data generators with new data
-    print("\n📁 Loading training data (including new images)...")
+    print("\nLoading training data (including new images)...")
     train_gen, val_gen, class_names = create_data_generators()
     
     num_classes = len(class_names)
-    print(f"\n✓ Detected {num_classes} classes (breeds)")
+    print(f"\nDetected {num_classes} classes (breeds)")
+    
+    # Check for class mismatch
+    model_output_shape = model.output_shape[-1]
+    print(f"Debug: Model output shape: {model.output_shape}, Last dim: {model_output_shape}")
+    print(f"Debug: Num classes from data: {num_classes}")
+    
+    if num_classes != model_output_shape:
+        print(f"\nMISMATCH DETECTED: Data has {num_classes} classes but model has {model_output_shape} outputs.")
+        print("Switching to Model Surgery mode...")
+        from add_breed import add_new_breed_to_model
+        # We need to close the current session/model to avoid conflicts? 
+        # Actually, add_new_breed_to_model loads the model again. 
+        # Let's just return and call that function.
+        return add_new_breed_to_model()
     
     # Calculate class weights
     class_weights = get_class_weights(train_gen)
@@ -65,7 +83,7 @@ def fine_tune_existing_model():
         json.dump(class_mapping, f, indent=2)
     
     # Configure for fine-tuning with lower learning rate
-    print("\n🔧 Configuring model for fine-tuning...")
+    print("\nConfiguring model for fine-tuning...")
     model.compile(
         optimizer=keras.optimizers.Adam(learning_rate=0.00001),  # Very low learning rate
         loss='categorical_crossentropy',
@@ -99,12 +117,12 @@ def fine_tune_existing_model():
     print("=" * 50)
     
     results = model.evaluate(val_gen, verbose=1)
-    print(f"\n✓ Validation Accuracy: {results[1]:.4f}")
-    print(f"✓ Validation Top-3 Accuracy: {results[2]:.4f}")
+    print(f"\nValidation Accuracy: {results[1]:.4f}")
+    print(f"Validation Top-3 Accuracy: {results[2]:.4f}")
     
     # Save fine-tuned model
     model.save(config.MODEL_PATH)
-    print(f"\n✅ Fine-tuned model saved to {config.MODEL_PATH}")
+    print(f"\nFine-tuned model saved to {config.MODEL_PATH}")
     
     # Save training history
     history_dict = {
@@ -114,7 +132,7 @@ def fine_tune_existing_model():
         json.dump(history_dict, f, indent=2)
     
     print("\n" + "=" * 50)
-    print("Fine-Tuning Complete! 🎉")
+    print("Fine-Tuning Complete!")
     print("=" * 50)
     print(f"\nYour improved model is ready at: {config.MODEL_PATH}")
     print("Restart the backend to use the updated model.")

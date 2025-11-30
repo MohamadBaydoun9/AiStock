@@ -17,6 +17,7 @@
     "Dog/Afghan",
     "Dog/African Wild Dog",
     "Dog/Akita Inu",
+    "Dog/Bermaise",
     "Dog/Boston Terrier",
     "Dog/Chow",
     "Dog/Elk Hound",
@@ -46,5 +47,5 @@
     "Monkey/Red Howler",
     "Monkey/White Faced Saki"
   ],
-  "num_classes": 45
+  "num_classes": 46
 }
