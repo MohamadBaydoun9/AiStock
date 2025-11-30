@@ -97,10 +97,9 @@ def fine_tune_existing_model():
     print("\n" + "=" * 50)
     print("Fine-Tuning with Additional Data")
     print("=" * 50)
-    print("This will improve the model's accuracy on Akita Inu vs Shiba Inu")
     
     # Use fewer epochs for fine-tuning
-    fine_tune_epochs = 10
+    fine_tune_epochs = 2
     
     history = model.fit(
         train_gen,

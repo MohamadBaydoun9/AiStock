@@ -5,7 +5,9 @@ venv/
 .env
 
 # Datasets
-data/
+data/test/
+data/train/
+data/val/
 datasets/
 checkpoints/
 *.h5
@@ -24,7 +26,10 @@ Thumbs.db
 ml/ignored
 ml/__pycache__
 ml/logs
-ml/data
+ml/data/test/
+ml/data/train/
+ml/data/val/
+!ml/data/price_training_data.csv
 .venv/
 
 frontend/node_modules

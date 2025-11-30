@@ -124,7 +124,7 @@ def add_new_breed_to_model():
     # Train for a few epochs to settle the new weights
     history = new_model.fit(
         train_gen,
-        epochs=1, # Enough to learn the new class
+        epochs=2, # Enough to learn the new class
         validation_data=val_gen,
         class_weight=class_weights,
         callbacks=callbacks,
