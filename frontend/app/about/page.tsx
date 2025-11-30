@@ -12,21 +12,26 @@ export default function AboutPage() {
 
     const supportedBreeds = {
         Dog: [
-            "Afghan", "African Wild Dog", "Golden Retriever", "Labrador", "German Shepherd",
-            "Bulldog", "Poodle", "Beagle", "Husky", "Corgi", "", ""
+            "Afghan", "African Wild Dog", "Akita Inu", "Boston Terrier", "Chow",
+            "Elk Hound", "German Sheperd", "Maltese", "Pekinese", "Shiba Inu",
+            "Shih-Tzu", "Bulldog", "Japanese"
         ],
         Cat: [
-            "Abyssinian", "American Bobtail", "Persian", "Siamese", "Maine Coon",
-            "Bengal", "Ragdoll", "British Shorthair", "Sphynx", "Scottish Fold"
+            "Abyssinian", "American Bobtail", "American Curl", "Burmese",
+            "Domestic Short Hair", "Exotic Shorthair", "Maine Coon",
+            "Oriental Long Hair", "Siberian", "Tortoiseshell"
         ],
         Fish: [
-            "Goldfish", "Betta", "Clownfish", "Guppy", "Angelfish"
+            "Anthias anthias", "Coris julis", "Dasyatis centroura", "Gobius niger",
+            "Gold Fish", "Polyprion americanus", "Rhinobatos cemiculus",
+            "Solea solea", "Tetrapturus belone", "Trigloporus lastoviza"
         ],
         Bird: [
-            "Parrot", "Canary", "Cockatiel", "Parakeet", "Finch"
+            "American Goldfinch", "Barn Owl", "Carmine Bee-Eater", "Downy Woodpecker"
         ],
         Monkey: [
-            "Capuchin", "Macaque", "Marmoset", "Spider Monkey", "Tamarin"
+            "Bald Uakari", "Emperor Tamarin", "Golden Monkey", "Hamadryas Baboon",
+            "Mandril", "Proboscis Monkey", "Red Howler", "White Faced Saki"
         ]
     }
 
@@ -155,7 +160,7 @@ export default function AboutPage() {
                                 </div>
                                 <div className="flex justify-between items-center">
                                     <span>Supported Countries</span>
-                                    <span className="font-bold text-2xl">20+</span>
+                                    <span className="font-bold text-2xl">12</span>
                                 </div>
                             </CardContent>
                         </Card>

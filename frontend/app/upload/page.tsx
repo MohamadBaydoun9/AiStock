@@ -100,6 +100,13 @@ export default function UploadPage() {
 
       console.log('Backend response:', result)
 
+      // Debug: Log prediction details
+      console.log('=== PREDICTION DEBUG ===')
+      console.log('Product Type:', result.product_type)
+      console.log('Predicted Breed:', result.product_name)
+      console.log('Confidence:', `${(result.confidence * 100).toFixed(2)}%`)
+      console.log('========================')
+
       setClassificationResult({
         productName: result.product_name,
         productType: result.product_type,
