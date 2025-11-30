@@ -1,6 +1,6 @@
 """
-Price Prediction Module
-Reusable module for predicting pet prices based on image + metadata
+Price Prediction Module (Metadata Only)
+Reusable module for predicting pet prices based on metadata
 """
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
@@ -37,56 +37,12 @@ class PricePredictorSingleton:
             print("✓ Encoders loaded")
         return self._encoders
 
-def load_image_from_path(image_path):
+def predict_price(image_array=None, pet_type='Dog', breed='Unknown', age_months=12, weight_kg=10, health_status=1, vaccinated=1, country='USA'):
     """
-    Load and preprocess image from file path
+    Predict price for a pet (Metadata Only)
     
     Args:
-        image_path: Path to image file
-        
-    Returns:
-        numpy array: Preprocessed image [1, 224, 224, 3]
-    """
-    img = tf.io.read_file(image_path)
-    img = tf.image.decode_jpeg(img, channels=3)
-    img = tf.image.resize(img, [config.IMG_SIZE, config.IMG_SIZE])
-    img = np.expand_dims(img.numpy(), axis=0)
-    return img
-
-def load_image_from_bytes(image_bytes):
-    """
-    Load and preprocess image from bytes
-    
-    Args:
-        image_bytes: Raw image bytes
-        
-    Returns:
-        numpy array: Preprocessed image [1, 224, 224, 3]
-    """
-    from PIL import Image
-    import io
-    
-    img = Image.open(io.BytesIO(image_bytes))
-    
-    # Convert to RGB if necessary
-    if img.mode != 'RGB':
-        img = img.convert('RGB')
-    
-    # Resize
-    img = img.resize((config.IMG_SIZE, config.IMG_SIZE))
-    
-    # Convert to array
-    img_array = np.array(img)
-    img_array = np.expand_dims(img_array, axis=0)
-    
-    return img_array
-
-def predict_price(image_array, pet_type, breed, age_months, weight_kg, health_status, vaccinated, country='USA'):
-    """
-    Predict price for a pet
-    
-    Args:
-        image_array: Preprocessed image array [1, 224, 224, 3]
+        image_array: Ignored (kept for compatibility)
         pet_type: 'Dog' or 'Cat'
         breed: Breed name (e.g., 'Golden Retriever', 'Persian')
         age_months: Age in months (2-60)
@@ -145,8 +101,8 @@ def predict_price(image_array, pet_type, breed, age_months, weight_kg, health_st
         country_encoded
     ]], dtype=np.float32)
     
-    # Predict (model learns country effect during training)
-    prediction = model.predict([image_array, metadata], verbose=0)
+    # Predict (Metadata only)
+    prediction = model.predict(metadata, verbose=0)
     price = float(prediction[0][0])
     
     # Ensure price is positive
@@ -156,62 +112,34 @@ def predict_price(image_array, pet_type, breed, age_months, weight_kg, health_st
 
 def predict_price_from_path(image_path, pet_type, breed, age_months, weight_kg, health_status, vaccinated, country='USA'):
     """
-    Convenience function: predict price from image path
-    
-    Args:
-        image_path: Path to image file
-        pet_type: 'Dog' or 'Cat'
-        breed: Breed name
-        age_months: Age in months
-        weight_kg: Weight in kg
-        health_status: 0, 1, or 2
-        vaccinated: 0 or 1
-        country: Country of origin
-        
-    Returns:
-        float: Predicted price in $
+    Convenience function: predict price (image path ignored)
     """
-    image_array = load_image_from_path(image_path)
-    return predict_price(image_array, pet_type, breed, age_months, weight_kg, health_status, vaccinated, country)
+    return predict_price(None, pet_type, breed, age_months, weight_kg, health_status, vaccinated, country)
 
 def predict_price_from_bytes(image_bytes, pet_type, breed, age_months, weight_kg, health_status, vaccinated, country='USA'):
     """
-    Convenience function: predict price from image bytes
-    
-    Args:
-        image_bytes: Raw image bytes
-        pet_type: 'Dog' or 'Cat'
-        breed: Breed name
-        age_months: Age in months
-        weight_kg: Weight in kg
-        health_status: 0, 1, or 2
-        vaccinated: 0 or 1
-        country: Country of origin
-        
-    Returns:
-        float: Predicted price in $
+    Convenience function: predict price (image bytes ignored)
     """
-    image_array = load_image_from_bytes(image_bytes)
-    return predict_price(image_array, pet_type, breed, age_months, weight_kg, health_status, vaccinated, country)
+    return predict_price(None, pet_type, breed, age_months, weight_kg, health_status, vaccinated, country)
 
 # Example usage
 if __name__ == '__main__':
     import sys
     
-    if len(sys.argv) < 8:
-        print("Usage: python predict_price.py <image_path> <type> <breed> <age_months> <weight_kg> <health_status> <vaccinated>")
-        print("Example: python predict_price.py dog.jpg Dog 'Golden Retriever' 4 10 2 1")
+    if len(sys.argv) < 7:
+        print("Usage: python predict_price.py <type> <breed> <age_months> <weight_kg> <health_status> <vaccinated> [country]")
+        print("Example: python predict_price.py Dog 'Golden Retriever' 4 10 2 1 USA")
         sys.exit(1)
     
-    image_path = sys.argv[1]
-    pet_type = sys.argv[2]
-    breed = sys.argv[3]
-    age_months = int(sys.argv[4])
-    weight_kg = float(sys.argv[5])
-    health_status = int(sys.argv[6])
-    vaccinated = int(sys.argv[7])
+    pet_type = sys.argv[1]
+    breed = sys.argv[2]
+    age_months = int(sys.argv[3])
+    weight_kg = float(sys.argv[4])
+    health_status = int(sys.argv[5])
+    vaccinated = int(sys.argv[6])
+    country = sys.argv[7] if len(sys.argv) > 7 else 'USA'
     
-    price = predict_price_from_path(image_path, pet_type, breed, age_months, weight_kg, health_status, vaccinated)
+    price = predict_price(None, pet_type, breed, age_months, weight_kg, health_status, vaccinated, country)
     
     print(f"\n{'='*60}")
     print(f"Predicted Price: ${price:.2f}")

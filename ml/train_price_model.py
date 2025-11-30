@@ -1,6 +1,6 @@
 """
-Training script for Price Prediction Model
-Multimodal architecture: Image features + Metadata → Price
+Training script for Price Prediction Model (Metadata Only)
+Architecture: Metadata Features → Dense Layers → Price
 """
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
@@ -13,6 +13,7 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 import config
+import joblib
 
 # GPU Configuration
 gpus = tf.config.list_physical_devices('GPU')
@@ -55,62 +56,38 @@ def load_and_prepare_data():
     
     return df, type_encoder, breed_encoder, country_encoder
 
-def create_image_feature_extractor():
-    """Create EfficientNetB0 feature extractor (frozen)"""
-    base_model = keras.applications.EfficientNetB0(
-        include_top=False,
-        weights='imagenet',
-        input_shape=(config.IMG_SIZE, config.IMG_SIZE, 3),
-        pooling='avg'
-    )
-    base_model.trainable = False  # Freeze for feature extraction
-    return base_model
-
 def create_price_prediction_model(num_types, num_breeds):
     """
-    Create multimodal price prediction model
+    Create metadata-only price prediction model
     
     Architecture:
-    - Image branch: EfficientNetB0 → 1280 features
-    - Metadata branch: Dense layers → 64 features
-    - Fusion: Concatenate → Dense layers → Price
+    - Metadata Input (7 features)
+    - Dense Layers with BatchNormalization and Dropout
+    - Output: Price
     """
-    # Image input
-    image_input = layers.Input(shape=(config.IMG_SIZE, config.IMG_SIZE, 3), name='image_input')
-    
-    # Extract image features using EfficientNetB0
-    feature_extractor = create_image_feature_extractor()
-    image_features = feature_extractor(image_input)  # Output: 1280 features
-    
     # Metadata input
-    metadata_input = layers.Input(shape=(7,), name='metadata_input')  
     # 7 features: type_encoded, breed_encoded, age_months, weight, health_status, vaccinated, country_encoded
+    metadata_input = layers.Input(shape=(7,), name='metadata_input')  
     
-    # Metadata processing branch
-    x_meta = layers.Dense(64, activation='relu')(metadata_input)
-    x_meta = layers.BatchNormalization()(x_meta)
-    x_meta = layers.Dropout(0.3)(x_meta)
-    x_meta = layers.Dense(32, activation='relu')(x_meta)
-    
-    # Concatenate image and metadata features
-    combined = layers.Concatenate()([image_features, x_meta])
-    
-    # Regression head
-    x = layers.Dense(256, activation='relu', kernel_regularizer=keras.regularizers.l2(0.001))(combined)
+    # Dense network
+    x = layers.Dense(128, activation='relu')(metadata_input)
     x = layers.BatchNormalization()(x)
-    x = layers.Dropout(0.4)(x)
-    x = layers.Dense(128, activation='relu', kernel_regularizer=keras.regularizers.l2(0.001))(x)
     x = layers.Dropout(0.3)(x)
+    
     x = layers.Dense(64, activation='relu')(x)
+    x = layers.BatchNormalization()(x)
+    x = layers.Dropout(0.2)(x)
+    
+    x = layers.Dense(32, activation='relu')(x)
     
     # Output: price (continuous value)
     price_output = layers.Dense(1, activation='linear', name='price_output')(x)
     
     # Create model
     model = models.Model(
-        inputs=[image_input, metadata_input],
+        inputs=metadata_input,
         outputs=price_output,
-        name='price_predictor'
+        name='price_predictor_metadata'
     )
     
     # Compile
@@ -122,51 +99,29 @@ def create_price_prediction_model(num_types, num_breeds):
     
     return model
 
-def load_image(image_path):
-    """Load and preprocess image"""
-    img = tf.io.read_file(image_path)
-    img = tf.io.decode_image(img, channels=3, expand_animations=False)
-    img.set_shape([None, None, 3])
-    img = tf.image.resize(img, [config.IMG_SIZE, config.IMG_SIZE])
-    return img
-
 def create_dataset(df, batch_size=32, shuffle=True):
-    """Create tf.data.Dataset for training"""
+    """Create tf.data.Dataset for training (Metadata Only)"""
     
-    def generator():
-        for idx, row in df.iterrows():
-            # Load image
-            img = load_image(row['image_path'])
-            
-            # Metadata features
-            metadata = np.array([
-                row['type_encoded'],
-                row['breed_encoded'],
-                row['age_months'] / 60.0,  # Normalize to 0-1
-                row['weight'] / 50.0,      # Normalize to 0-1
-                row['health_status'] / 2.0, # Normalize to 0-1
-                row['vaccinated'],
-                row['country_encoded']
-            ], dtype=np.float32)
-            
-            # Target price
-            price = np.array([row['price']], dtype=np.float32)
-            
-            yield (img, metadata), price
+    # Convert dataframe to numpy arrays for efficiency
+    # Features: [type, breed, age, weight, health, vaccinated, country]
+    # We normalize continuous variables here
     
-    dataset = tf.data.Dataset.from_generator(
-        generator,
-        output_signature=(
-            (
-                tf.TensorSpec(shape=(config.IMG_SIZE, config.IMG_SIZE, 3), dtype=tf.float32),
-                tf.TensorSpec(shape=(7,), dtype=tf.float32)
-            ),
-            tf.TensorSpec(shape=(1,), dtype=tf.float32)
-        )
-    )
+    features = np.stack([
+        df['type_encoded'].values,
+        df['breed_encoded'].values,
+        df['age_months'].values / 60.0,  # Normalize age (0-5 years)
+        df['weight'].values / 50.0,      # Normalize weight (approx max 50kg)
+        df['health_status'].values / 2.0, # Normalize health (0-2)
+        df['vaccinated'].values,
+        df['country_encoded'].values
+    ], axis=1).astype(np.float32)
+    
+    targets = df['price'].values.astype(np.float32)
+    
+    dataset = tf.data.Dataset.from_tensor_slices((features, targets))
     
     if shuffle:
-        dataset = dataset.shuffle(buffer_size=1000, seed=42)
+        dataset = dataset.shuffle(buffer_size=len(df), seed=42)
     
     dataset = dataset.batch(batch_size)
     dataset = dataset.prefetch(buffer_size=tf.data.AUTOTUNE)
@@ -176,7 +131,7 @@ def create_dataset(df, batch_size=32, shuffle=True):
 def train():
     """Main training function"""
     print("=" * 60)
-    print("Price Prediction Model - Training")
+    print("Price Prediction Model (Metadata Only) - Training")
     print("=" * 60)
     
     # Load data
@@ -209,7 +164,7 @@ def train():
         ),
         keras.callbacks.EarlyStopping(
             monitor='val_mae',
-            patience=10,
+            patience=15,
             restore_best_weights=True,
             verbose=1
         ),
@@ -229,7 +184,7 @@ def train():
     
     history = model.fit(
         train_ds,
-        epochs=30,
+        epochs=50,
         validation_data=val_ds,
         callbacks=callbacks,
         verbose=1
@@ -245,7 +200,6 @@ def train():
     print(f"✓ Validation RMSE: ${results[3]:.2f}")
     
     # Save encoders
-    import joblib
     encoders_path = os.path.join(config.MODEL_DIR, 'price_encoders.joblib')
     joblib.dump({
         'type_encoder': type_encoder,

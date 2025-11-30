@@ -6,52 +6,52 @@ import random
 import pandas as pd
 import config
 
-# Breed-specific characteristics for realistic data generation
+# Breed-specific characteristics for realistic data generation (2024/2025 Market Prices)
 BREED_CHARACTERISTICS = {
     # Dogs
-    'Afghan': {'avg_weight': 25, 'base_price': 1800, 'price_range': 400},
-    'African Wild Dog': {'avg_weight': 23, 'base_price': 2500, 'price_range': 500},
-    'Golden Retriever': {'avg_weight': 30, 'base_price': 1500, 'price_range': 300},
-    'Labrador': {'avg_weight': 32, 'base_price': 1200, 'price_range': 300},
+    'Afghan': {'avg_weight': 25, 'base_price': 2000, 'price_range': 500},
+    'African Wild Dog': {'avg_weight': 23, 'base_price': 5000, 'price_range': 1000}, # Exotic/Rare
+    'Golden Retriever': {'avg_weight': 30, 'base_price': 1500, 'price_range': 400},
+    'Labrador': {'avg_weight': 32, 'base_price': 1400, 'price_range': 300},
     'German Shepherd': {'avg_weight': 35, 'base_price': 1800, 'price_range': 400},
-    'Bulldog': {'avg_weight': 22, 'base_price': 2000, 'price_range': 500},
-    'Poodle': {'avg_weight': 25, 'base_price': 1600, 'price_range': 400},
+    'Bulldog': {'avg_weight': 22, 'base_price': 3000, 'price_range': 600},
+    'Poodle': {'avg_weight': 25, 'base_price': 1200, 'price_range': 400},
     'Beagle': {'avg_weight': 12, 'base_price': 1000, 'price_range': 200},
     'Husky': {'avg_weight': 23, 'base_price': 1700, 'price_range': 400},
     'Corgi': {'avg_weight': 13, 'base_price': 1400, 'price_range': 300},
     
     # Cats
-    'Abyssinian': {'avg_weight': 4.5, 'base_price': 900, 'price_range': 200},
-    'American Bobtail': {'avg_weight': 5.5, 'base_price': 800, 'price_range': 200},
-    'Persian': {'avg_weight': 5, 'base_price': 1200, 'price_range': 300},
-    'Siamese': {'avg_weight': 4, 'base_price': 900, 'price_range': 200},
-    'Maine Coon': {'avg_weight': 7, 'base_price': 900, 'price_range': 250},
-    'Bengal': {'avg_weight': 5.5, 'base_price': 1200, 'price_range': 300},
-    'Ragdoll': {'avg_weight': 6.5, 'base_price': 850, 'price_range': 200},
-    'British Shorthair': {'avg_weight': 5.5, 'base_price': 700, 'price_range': 150},
-    'Sphynx': {'avg_weight': 4, 'base_price': 1500, 'price_range': 400},
-    'Scottish Fold': {'avg_weight': 4.5, 'base_price': 1000, 'price_range': 250},
+    'Abyssinian': {'avg_weight': 4.5, 'base_price': 1500, 'price_range': 300},
+    'American Bobtail': {'avg_weight': 5.5, 'base_price': 1200, 'price_range': 250},
+    'Persian': {'avg_weight': 5, 'base_price': 2000, 'price_range': 500},
+    'Siamese': {'avg_weight': 4, 'base_price': 1000, 'price_range': 300},
+    'Maine Coon': {'avg_weight': 7, 'base_price': 1500, 'price_range': 400},
+    'Bengal': {'avg_weight': 5.5, 'base_price': 3000, 'price_range': 800},
+    'Ragdoll': {'avg_weight': 6.5, 'base_price': 2000, 'price_range': 500},
+    'British Shorthair': {'avg_weight': 5.5, 'base_price': 2000, 'price_range': 400},
+    'Sphynx': {'avg_weight': 4, 'base_price': 2500, 'price_range': 600},
+    'Scottish Fold': {'avg_weight': 4.5, 'base_price': 1800, 'price_range': 400},
 
     # Fish
-    'Goldfish': {'avg_weight': 0.2, 'base_price': 20, 'price_range': 15},
+    'Gold Fish': {'avg_weight': 0.2, 'base_price': 5, 'price_range': 3},
     'Betta': {'avg_weight': 0.05, 'base_price': 15, 'price_range': 10},
-    'Clownfish': {'avg_weight': 0.1, 'base_price': 30, 'price_range': 10},
-    'Guppy': {'avg_weight': 0.02, 'base_price': 5, 'price_range': 3},
+    'Clownfish': {'avg_weight': 0.1, 'base_price': 20, 'price_range': 10},
+    'Guppy': {'avg_weight': 0.02, 'base_price': 3, 'price_range': 2},
     'Angelfish': {'avg_weight': 0.15, 'base_price': 25, 'price_range': 10},
 
     # Birds
-    'Parrot': {'avg_weight': 0.5, 'base_price': 500, 'price_range': 200},
-    'Canary': {'avg_weight': 0.02, 'base_price': 80, 'price_range': 30},
-    'Cockatiel': {'avg_weight': 0.1, 'base_price': 150, 'price_range': 50},
-    'Parakeet': {'avg_weight': 0.04, 'base_price': 40, 'price_range': 20},
-    'Finch': {'avg_weight': 0.02, 'base_price': 30, 'price_range': 15},
+    'Parrot': {'avg_weight': 0.5, 'base_price': 2000, 'price_range': 500},
+    'Canary': {'avg_weight': 0.02, 'base_price': 80, 'price_range': 20},
+    'Cockatiel': {'avg_weight': 0.1, 'base_price': 100, 'price_range': 30},
+    'Parakeet': {'avg_weight': 0.04, 'base_price': 25, 'price_range': 10},
+    'Finch': {'avg_weight': 0.02, 'base_price': 20, 'price_range': 10},
 
     # Monkeys
-    'Capuchin': {'avg_weight': 3.5, 'base_price': 6000, 'price_range': 1000},
-    'Macaque': {'avg_weight': 6.0, 'base_price': 5000, 'price_range': 800},
-    'Marmoset': {'avg_weight': 0.4, 'base_price': 4000, 'price_range': 600},
-    'Spider Monkey': {'avg_weight': 7.0, 'base_price': 7000, 'price_range': 1200},
-    'Tamarin': {'avg_weight': 0.5, 'base_price': 4500, 'price_range': 700},
+    'Capuchin': {'avg_weight': 3.5, 'base_price': 7000, 'price_range': 1500},
+    'Macaque': {'avg_weight': 6.0, 'base_price': 6000, 'price_range': 1200},
+    'Marmoset': {'avg_weight': 0.4, 'base_price': 2500, 'price_range': 500},
+    'Spider Monkey': {'avg_weight': 7.0, 'base_price': 8000, 'price_range': 2000},
+    'Tamarin': {'avg_weight': 0.5, 'base_price': 2500, 'price_range': 600},
 }
 
 # Breed-to-country mapping (possible countries of origin/breeding)
@@ -82,7 +82,7 @@ BREED_COUNTRY_MAP = {
     'Scottish Fold': ['Scotland', 'England', 'USA'],
 
     # Fish
-    'Goldfish': ['China', 'Japan', 'USA'],
+    'Gold Fish': ['China', 'Japan', 'USA'],
     'Betta': ['Thailand', 'Vietnam', 'USA'],
     'Clownfish': ['Australia', 'Indonesia', 'USA'],
     'Guppy': ['Brazil', 'Venezuela', 'USA'],
@@ -126,6 +126,14 @@ COUNTRY_MULTIPLIERS = {
     'Spain': 1.05,        # Canaries
 }
 
+# Helper to normalize names for matching (e.g. "Gold Fish" -> "goldfish")
+def normalize_name(name):
+    return name.lower().replace(" ", "").replace("_", "")
+
+# Create normalized lookup tables
+NORMALIZED_BREED_CHARS = {normalize_name(k): v for k, v in BREED_CHARACTERISTICS.items()}
+NORMALIZED_COUNTRY_MAP = {normalize_name(k): v for k, v in BREED_COUNTRY_MAP.items()}
+
 def generate_metadata(pet_type, breed):
     """
     Generate realistic metadata for a pet
@@ -144,14 +152,22 @@ def generate_metadata(pet_type, breed):
     elif pet_type == 'Bird': default_weight = 0.2
     elif pet_type == 'Monkey': default_weight = 5
     
-    breed_info = BREED_CHARACTERISTICS.get(breed, {
-        'avg_weight': default_weight,
-        'base_price': 1000,
-        'price_range': 300
-    })
+    # Try to find breed using normalized name
+    normalized_breed = normalize_name(breed)
+    
+    breed_info = NORMALIZED_BREED_CHARS.get(normalized_breed)
+    
+    # If not found, use defaults
+    if not breed_info:
+        # print(f"Warning: Breed '{breed}' not found in database. Using defaults.")
+        breed_info = {
+            'avg_weight': default_weight,
+            'base_price': 1000,
+            'price_range': 300
+        }
     
     # Get country of origin (randomly select from possible countries)
-    possible_countries = BREED_COUNTRY_MAP.get(breed, ['USA'])  # Default to USA
+    possible_countries = NORMALIZED_COUNTRY_MAP.get(normalized_breed, ['USA'])  # Default to USA
     country = random.choice(possible_countries)
     country_multiplier = COUNTRY_MULTIPLIERS.get(country, 1.0)
     
@@ -236,15 +252,14 @@ def scan_directory_and_generate_dataset(base_dir, dataset_name):
             # Process all images in breed directory
             for image_file in os.listdir(breed_dir):
                 if image_file.lower().endswith(('.jpg', '.jpeg', '.png')):
-                    # Get relative path from project root
-                    image_path = os.path.join(breed_dir, image_file)
+                    # NOTE: We are iterating images to generate volume, 
+                    # but we are NOT saving the image path as per user request.
                     
                     # Generate metadata
                     metadata = generate_metadata(pet_type, breed)
                     
-                    # Create row
+                    # Create row (NO image_path)
                     row = {
-                        'image_path': image_path,
                         'type': pet_type,
                         'breed': breed,
                         **metadata
@@ -252,13 +267,13 @@ def scan_directory_and_generate_dataset(base_dir, dataset_name):
                     
                     data_rows.append(row)
     
-    print(f"Found {len(data_rows)} images in {dataset_name}")
+    print(f"Generated {len(data_rows)} samples from {dataset_name}")
     return data_rows
 
 def main():
     """Generate synthetic price dataset"""
     print("=" * 60)
-    print("Generating Synthetic Price Dataset with Country")
+    print("Generating Synthetic Price Dataset (Metadata Only)")
     print("=" * 60)
     
     # Collect data from train and val directories

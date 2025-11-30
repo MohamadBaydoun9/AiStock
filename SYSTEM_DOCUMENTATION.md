@@ -80,15 +80,35 @@ model = Sequential([
 2.  **Phase 2 (Fine-Tuning):** We unfreeze the top 20 layers of EfficientNet and train with a very low learning rate (`1e-5`) to adapt the model specifically to pet features (fur texture, ear shapes).
 
 ### B. Price Prediction Model
-**Goal:** Suggest a market price based on breed, age, and type.
+**Goal:** Suggest a market price based on pet metadata (Breed, Age, Weight, Health, etc.).
 
 **Architecture:**
-- **Type:** Regression Model (Random Forest / Linear Regressor logic implemented in custom logic or simple neural net).
-- **Inputs:** Breed (One-hot encoded), Age, Weight.
-- **Output:** Single continuous value (Price).
-- **Metric:** MAE (Mean Absolute Error) - chosen because it's robust to outliers and easy to interpret (e.g., "off by $50").
+- **Type:** Deep Neural Network (MLP - Multi-Layer Perceptron).
+- **Inputs:** 7 Metadata Features (Type, Breed, Age, Weight, Health Status, Vaccinated, Country).
+- **Layers:** 
+  - Input Layer (7 features)
+  - Dense(128) + BatchNormalization + Dropout
+  - Dense(64) + BatchNormalization + Dropout
+  - Dense(32)
+  - Output(1) -> Linear Activation (Price)
+- **Why Metadata Only?** We found that visual features (the image) are redundant for pricing once the breed is identified. Pricing is driven by market factors (age, health, pedigree/country) rather than the specific pixel arrangement of the photo.
 
 ### C. "Model Surgery" (Incremental Learning)
+**The Challenge:** Adding a new breed (class) to a trained neural network usually requires retraining from scratch, which is slow and expensive.
+
+**Our Solution:**
+1.  **Load** the existing model.
+2.  **Remove** the top output layer (e.g., 45 neurons).
+3.  **Create** a new output layer with $N+1$ neurons (46 neurons).
+4.  **Copy** the weights for the original 45 classes.
+5.  **Initialize** the new neuron's weights.
+6.  **Train** only the new layer briefly to "settle" it.
+
+---
+
+## 5. Technical Q&A (Interview Prep)
+
+**Q1: Why did you choose MongoDB over SQL?**
 > **A:** Pet products vary wildly. A fish has "water_type" while a dog has "breed_size". MongoDB's flexible schema allows us to store these different attributes without complex join tables or sparse columns.
 
 **Q2: How do you handle long-running training tasks?**
@@ -98,7 +118,7 @@ model = Sequential([
 > **A:** `Flatten` keeps all spatial information, leading to a massive number of parameters and overfitting. `GlobalAveragePooling` summarizes the feature map into a single vector, making the model more robust to the *position* of the pet in the image.
 
 **Q4: How do you prevent the model from forgetting old breeds when adding a new one?**
-> **A:** We use a technique called "Replay" (implicitly) or simply a low learning rate on the shared weights. By initializing the new weights carefully and keeping the existing weights close to their original values, we minimize drift.
+> **A:** We use a **Rehearsal Strategy**. When fine-tuning or adding a breed, we include data from *all* existing breeds in the training batches, not just the new one. This forces the model to maintain its performance on the old tasks while learning the new one.
 
 **Q5: What is the "Confidence Score"?**
 > **A:** It's the highest value from the Softmax output layer. Softmax turns the model's raw numbers (logits) into probabilities that sum to 100%.
@@ -109,8 +129,11 @@ model = Sequential([
 - `/frontend`: Next.js Application
 - `/backend`: FastAPI Server
 - `/ml`: Machine Learning Scripts
-    - `data/`: Training images
+    - `data/`: Training images (ignored in git)
     - `models/`: Saved `.keras` files
     - `train.py`: Full retraining script
     - `fine_tune.py`: Accuracy improvement script
     - `add_breed.py`: Model surgery script
+    - `train_price_model.py`: Metadata-based price predictor
+    - `generate_price_dataset.py`: Synthetic data generator
+
