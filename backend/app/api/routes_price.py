@@ -149,6 +149,22 @@ async def classify_and_price(
         classifier = predict_module.get_classifier()
         breed_result = classifier.predict_from_bytes(image_bytes)
         
+        confidence = breed_result.get('confidence', 0.0)
+        
+        if confidence < 0.40:
+             print(f"⚠️ Low confidence ({confidence:.2f}). Returning empty prediction.")
+             return {
+                "classification": {
+                    "type": "",
+                    "breed": "",
+                    "confidence": confidence
+                },
+                "price_prediction": {
+                    "predicted_price": 0.0,
+                    "metadata": {}
+                }
+            }
+        
         # Extract breed and type
         pet_type = breed_result['product_type']
         breed = breed_result['product_name']

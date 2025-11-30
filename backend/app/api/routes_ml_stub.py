@@ -77,16 +77,30 @@ async def classify_and_predict(file: UploadFile = File(...)):
         image_bytes = await file.read()
         
         # Get classifier and make prediction
+        # Get classifier and make prediction
         classifier = predict_module.get_classifier()
         result = classifier.predict_from_bytes(image_bytes)
         
-        print(f"✅ Prediction: {result['product_type']} - {result['product_name']} (confidence: {result.get('confidence', 0):.2f})")
+        confidence = result.get('confidence', 0.0)
+        print(f"✅ Prediction: {result['product_type']} - {result['product_name']} (confidence: {confidence:.2f})")
+        
+        # Check confidence threshold
+        if confidence < 0.45:
+            print(f"⚠️ Low confidence ({confidence:.2f}). Returning empty prediction.")
+            return MLResponse(
+                product_type="",
+                product_name="",
+                price_predicted=0.0,
+                confidence=confidence,
+                exists=False,
+                existing_product=None
+            )
         
         return MLResponse(
             product_type=result['product_type'],
             product_name=result['product_name'],
             price_predicted=result['price_predicted'],
-            confidence=result.get('confidence', 0.0),
+            confidence=confidence,
             exists=False,
             existing_product=None
         )

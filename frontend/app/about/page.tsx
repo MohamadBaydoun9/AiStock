@@ -6,34 +6,30 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { ScrollArea } from "@/components/ui/scroll-area"
+import { useEffect, useState } from 'react'
 
 export default function AboutPage() {
     const router = useRouter()
+    const [supportedBreeds, setSupportedBreeds] = useState<Record<string, string[]>>({})
+    const [loading, setLoading] = useState(true)
 
-    const supportedBreeds = {
-        Dog: [
-            "Afghan", "African Wild Dog", "Akita Inu", "Boston Terrier", "Chow",
-            "Elk Hound", "German Sheperd", "Maltese", "Pekinese", "Shiba Inu",
-            "Shih-Tzu", "Bulldog", "Japanese"
-        ],
-        Cat: [
-            "Abyssinian", "American Bobtail", "American Curl", "Burmese",
-            "Domestic Short Hair", "Exotic Shorthair", "Maine Coon",
-            "Oriental Long Hair", "Siberian", "Tortoiseshell"
-        ],
-        Fish: [
-            "Anthias anthias", "Coris julis", "Dasyatis centroura", "Gobius niger",
-            "Gold Fish", "Polyprion americanus", "Rhinobatos cemiculus",
-            "Solea solea", "Tetrapturus belone", "Trigloporus lastoviza"
-        ],
-        Bird: [
-            "American Goldfinch", "Barn Owl", "Carmine Bee-Eater", "Downy Woodpecker"
-        ],
-        Monkey: [
-            "Bald Uakari", "Emperor Tamarin", "Golden Monkey", "Hamadryas Baboon",
-            "Mandril", "Proboscis Monkey", "Red Howler", "White Faced Saki"
-        ]
-    }
+    useEffect(() => {
+        const fetchBreeds = async () => {
+            try {
+                const response = await fetch('http://localhost:8000/train/all-breeds')
+                if (response.ok) {
+                    const data = await response.json()
+                    setSupportedBreeds(data)
+                }
+            } catch (error) {
+                console.error("Failed to fetch breeds:", error)
+            } finally {
+                setLoading(false)
+            }
+        }
+
+        fetchBreeds()
+    }, [])
 
     return (
         <div className="min-h-screen bg-background">
@@ -112,27 +108,43 @@ export default function AboutPage() {
                                     </CardDescription>
                                 </CardHeader>
                                 <CardContent>
-                                    <Tabs defaultValue="Dog" className="w-full">
-                                        <TabsList className="grid w-full grid-cols-5">
-                                            {Object.keys(supportedBreeds).map((type) => (
-                                                <TabsTrigger key={type} value={type}>{type}</TabsTrigger>
+                                    {loading ? (
+                                        <div className="flex items-center justify-center py-12">
+                                            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+                                        </div>
+                                    ) : Object.keys(supportedBreeds).length > 0 ? (
+                                        <Tabs defaultValue={Object.keys(supportedBreeds)[0]} className="w-full">
+                                            <TabsList className="flex w-full flex-wrap h-auto gap-2 bg-transparent p-0 mb-4">
+                                                {Object.keys(supportedBreeds).map((type) => (
+                                                    <TabsTrigger
+                                                        key={type}
+                                                        value={type}
+                                                        className="flex-1 min-w-[100px] data-[state=active]:bg-primary data-[state=active]:text-primary-foreground border border-input bg-background"
+                                                    >
+                                                        {type}
+                                                    </TabsTrigger>
+                                                ))}
+                                            </TabsList>
+                                            {Object.entries(supportedBreeds).map(([type, breeds]) => (
+                                                <TabsContent key={type} value={type} className="mt-0">
+                                                    <ScrollArea className="h-[300px] w-full rounded-md border p-4">
+                                                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                                                            {breeds.map((breed) => (
+                                                                <div key={breed} className="flex items-center gap-2 p-2 rounded-lg hover:bg-muted transition-colors">
+                                                                    <CheckCircle2 className="h-4 w-4 text-green-500 shrink-0" />
+                                                                    <span className="text-sm">{breed}</span>
+                                                                </div>
+                                                            ))}
+                                                        </div>
+                                                    </ScrollArea>
+                                                </TabsContent>
                                             ))}
-                                        </TabsList>
-                                        {Object.entries(supportedBreeds).map(([type, breeds]) => (
-                                            <TabsContent key={type} value={type} className="mt-4">
-                                                <ScrollArea className="h-[300px] w-full rounded-md border p-4">
-                                                    <div className="grid grid-cols-2 gap-4">
-                                                        {breeds.map((breed) => (
-                                                            <div key={breed} className="flex items-center gap-2 p-2 rounded-lg hover:bg-muted transition-colors">
-                                                                <CheckCircle2 className="h-4 w-4 text-green-500" />
-                                                                <span>{breed}</span>
-                                                            </div>
-                                                        ))}
-                                                    </div>
-                                                </ScrollArea>
-                                            </TabsContent>
-                                        ))}
-                                    </Tabs>
+                                        </Tabs>
+                                    ) : (
+                                        <div className="text-center py-12 text-muted-foreground">
+                                            No breeds found.
+                                        </div>
+                                    )}
                                 </CardContent>
                             </Card>
                         </section>

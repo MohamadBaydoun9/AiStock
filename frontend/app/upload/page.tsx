@@ -120,10 +120,18 @@ export default function UploadPage() {
       setEditedName(result.product_name)
       setCurrentStep("classify")
 
-      toast({
-        title: "Classification Complete",
-        description: `Detected: ${result.product_name}`,
-      })
+      if (!result.product_type || !result.product_name) {
+        toast({
+          title: "Unable to Predict",
+          description: "Confidence score is too low (< 40%). Please enter details manually.",
+          variant: "destructive"
+        })
+      } else {
+        toast({
+          title: "Classification Complete",
+          description: `Detected: ${result.product_name}`,
+        })
+      }
     } catch (error) {
       console.error('Classification error:', error)
       toast({

@@ -191,3 +191,24 @@ async def get_existing_breeds(product_type: str):
             breeds.append(item)
             
     return {"breeds": sorted(breeds)}
+
+@router.get("/all-breeds")
+async def get_all_breeds():
+    """
+    List all existing breeds grouped by product type
+    """
+    all_breeds = {}
+    
+    if not os.path.exists(TRAIN_DIR):
+        return all_breeds
+        
+    for product_type in os.listdir(TRAIN_DIR):
+        type_dir = os.path.join(TRAIN_DIR, product_type)
+        if os.path.isdir(type_dir):
+            breeds = []
+            for item in os.listdir(type_dir):
+                if os.path.isdir(os.path.join(type_dir, item)):
+                    breeds.append(item)
+            all_breeds[product_type] = sorted(breeds)
+            
+    return all_breeds
