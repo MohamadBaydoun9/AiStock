@@ -13,7 +13,7 @@ export default function AboutPage() {
     const supportedBreeds = {
         Dog: [
             "Afghan", "African Wild Dog", "Golden Retriever", "Labrador", "German Shepherd",
-            "Bulldog", "Poodle", "Beagle", "Husky", "Corgi"
+            "Bulldog", "Poodle", "Beagle", "Husky", "Corgi", "", ""
         ],
         Cat: [
             "Abyssinian", "American Bobtail", "Persian", "Siamese", "Maine Coon",
@@ -26,7 +26,7 @@ export default function AboutPage() {
             "Parrot", "Canary", "Cockatiel", "Parakeet", "Finch"
         ],
         Monkey: [
-            "Capuchin", "Macaque", "Marmoset", "Spider Monkey", "Tamarin1"
+            "Capuchin", "Macaque", "Marmoset", "Spider Monkey", "Tamarin"
         ]
     }
 

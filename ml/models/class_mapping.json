@@ -4,8 +4,6 @@
     "Bird/BARN OWL",
     "Bird/CARMINE BEE-EATER",
     "Bird/DOWNY WOODPECKER",
-    "Bird/EMPEROR PENGUIN",
-    "Bird/FLAMINGO",
     "Cat/Abyssinian",
     "Cat/American Bobtail",
     "Cat/American Curl",
@@ -18,18 +16,22 @@
     "Cat/Tortoiseshell",
     "Dog/Afghan",
     "Dog/African Wild Dog",
+    "Dog/Akita Inu",
     "Dog/Boston Terrier",
     "Dog/Chow",
     "Dog/Elk Hound",
     "Dog/German Sheperd",
     "Dog/Maltese",
     "Dog/Pekinese",
+    "Dog/Shiba Inu",
+    "Dog/Shih-Tzu",
     "Dog/bulldog",
     "Dog/japanese",
     "Fish/Anthias anthias",
     "Fish/Coris julis",
     "Fish/Dasyatis centroura",
     "Fish/Gobius niger",
+    "Fish/Gold Fish",
     "Fish/Polyprion americanus",
     "Fish/Rhinobatos cemiculus",
     "Fish/Solea solea",
@@ -44,5 +46,5 @@
     "Monkey/Red Howler",
     "Monkey/White Faced Saki"
   ],
-  "num_classes": 43
+  "num_classes": 45
 }
