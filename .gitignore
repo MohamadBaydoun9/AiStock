@@ -1,6 +1,5 @@
-# Python
-__pycache__/
-*.pyc
+
+
 venv/
 .env
 
@@ -24,7 +23,7 @@ checkpoints/
 .DS_Store
 Thumbs.db
 ml/ignored
-ml/__pycache__
+
 ml/logs
 ml/data/test/
 ml/data/train/

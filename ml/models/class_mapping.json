@@ -12,6 +12,7 @@
     "Cat/Exotic Shorthair",
     "Cat/Maine Coon",
     "Cat/Oriental Long Hair",
+    "Cat/Scottish Fold",
     "Cat/Siberian",
     "Cat/Tortoiseshell",
     "Dog/Afghan",
@@ -47,5 +48,5 @@
     "Monkey/Red Howler",
     "Monkey/White Faced Saki"
   ],
-  "num_classes": 46
+  "num_classes": 47
 }
