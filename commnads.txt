@@ -9,7 +9,6 @@ uvicorn app.main:app --reload      //backend directory
 python11 -m app.seeds.seed_admin //backend directory
 
 
-
 frontend
 npm install --legacy-peer-deps
 npm run dev 

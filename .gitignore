@@ -1,40 +1,135 @@
-
-
+__pycache__/
+*.pyc
 venv/
 myenv/
+.myenv/
+.venv/
 .env
-
-# Datasets
-data/test/
-data/train/
-data/val/
-datasets/
-checkpoints/
+ml/__pycache__
 *.h5
 *.pt
 *.pth
-
-# IDE
 .vscode/
 .idea/
 *.user
 *.suo
-
-# OS
 .DS_Store
 Thumbs.db
 ml/ignored
-
 ml/logs
-ml/data/test/
-ml/data/train/
-ml/data/val/
-!ml/data/price_training_data.csv
-.venv/
-
-frontend/node_modules
-
-
 ml/zips
 ml/test
 .next/
+frontend/node_modules
+!ml/data/price_training_data.csv
+
+
+# Ignore all images in train & val
+ml/data/train/**
+ml/data/val/**
+
+# Allow directories so we can unignore specific files
+!ml/data/train/**/
+!ml/data/val/**/
+
+
+
+
+
+
+!ml/data/train/Bird/AMERICAN GOLDFINCH/001.jpg
+!ml/data/train/Bird/BARN OWL/001.jpg
+!ml/data/train/Bird/CARMINE BEE-EATER/001.jpg
+!ml/data/train/Bird/DOWNY WOODPECKER/001.jpg
+!ml/data/train/Cat/Abyssinian/16734355_246.jpg
+!ml/data/train/Cat/American Bobtail/16263029_4818.jpg
+!ml/data/train/Cat/American Curl/20175163_539.jpg
+!ml/data/train/Cat/Burmese/18278525_1257.jpg
+!ml/data/train/Cat/Domestic Short Hair/45690451_43533.jpg
+!ml/data/train/Cat/Exotic Shorthair/18291069_1407.jpg
+!ml/data/train/Cat/Maine Coon/42856631_7462.jpg
+!ml/data/train/Cat/Oriental Long Hair/19425202_173.jpg
+!ml/data/train/Cat/Scottish Fold/12524790_954.jpg
+!ml/data/train/Cat/Siberian/18935491_591.jpg
+!ml/data/train/Cat/Tortoiseshell/41750615_9995.jpg
+!ml/data/train/Dog/Afghan/007.jpg
+!ml/data/train/Dog/African Wild Dog/005.jpg
+!ml/data/train/Dog/Akita Inu/105.jpg
+!ml/data/train/Dog/Bermaise/001.jpg
+!ml/data/train/Dog/Boston Terrier/01.jpg
+!ml/data/train/Dog/bulldog/002.jpg
+!ml/data/train/Dog/Chow/001.jpg
+!ml/data/train/Dog/Elk Hound/001.jpg
+!ml/data/train/Dog/German Sheperd/001.jpg
+!ml/data/train/Dog/japanese/japanese_chin_100.jpg
+!ml/data/train/Dog/Maltese/001.jpg
+!ml/data/train/Dog/Pekinese/001.jpg
+!ml/data/train/Dog/Shiba Inu/01.jpg
+!ml/data/train/Dog/Shih-Tzu/002.jpg
+!ml/data/train/Fish/Anthias anthias/anthias_anthias-0.jpg
+!ml/data/train/Fish/Coris julis/coris_julis-0.jpg
+!ml/data/train/Fish/Dasyatis centroura/dasyatis_centroura-0.jpg
+!ml/data/train/Fish/Gobius niger/gobius_niger-0.jpg
+!ml/data/train/Fish/Gold Fish/Gold Fish 20.jpg
+!ml/data/train/Fish/Polyprion americanus/polyprion_americanus-0.jpg
+!ml/data/train/Fish/Rhinobatos cemiculus/rhinobatos_cemiculus-0.jpg
+!ml/data/train/Fish/Solea solea/solea_solea-0.jpg
+!ml/data/train/Fish/Tetrapturus belone/tetrapturus_belone-0.jpg
+!ml/data/train/Fish/Trigloporus lastoviza/trigloporus_lastoviza-0.jpg
+!ml/data/train/Monkey/Bald Uakari/BU (100).jpeg
+!ml/data/train/Monkey/Emperor Tamarin/C.jpeg
+!ml/data/train/Monkey/Golden Monkey/GM (1080).jpeg
+!ml/data/train/Monkey/Hamadryas Baboon/HM (100).jpeg
+!ml/data/train/Monkey/Mandril/M (100).jpeg
+!ml/data/train/Monkey/Proboscis Monkey/PM (1000).jpeg
+!ml/data/train/Monkey/Red Howler/RH (1000).jpeg
+!ml/data/train/Monkey/White Faced Saki/WFS (1298).jpeg
+
+# Root: ml/data/val
+!ml/data/val/Bird/AMERICAN GOLDFINCH/002.jpg
+!ml/data/val/Bird/BARN OWL/007.jpg
+!ml/data/val/Bird/CARMINE BEE-EATER/002.jpg
+!ml/data/val/Bird/DOWNY WOODPECKER/011.jpg
+!ml/data/val/Cat/Abyssinian/14210840_249.jpg
+!ml/data/val/Cat/American Bobtail/16492390_4789.jpg
+!ml/data/val/Cat/American Curl/13435665_596.jpg
+!ml/data/val/Cat/Burmese/13979204_1439.jpg
+!ml/data/val/Cat/Domestic Short Hair/45620578_10054.jpg
+!ml/data/val/Cat/Exotic Shorthair/10777641_1733.jpg
+!ml/data/val/Cat/Maine Coon/41090115_6563.jpg
+!ml/data/val/Cat/Oriental Long Hair/20412124_154.jpg
+!ml/data/val/Cat/Scottish Fold/13141683_943.jpg
+!ml/data/val/Cat/Siberian/18528351_595.jpg
+!ml/data/val/Cat/Tonkinese/13206432_829.jpg
+!ml/data/val/Dog/Afghan/003.jpg
+!ml/data/val/Dog/African Wild Dog/006.jpg
+!ml/data/val/Dog/Akita Inu/130.jpg
+!ml/data/val/Dog/Bermaise/003.jpg
+!ml/data/val/Dog/Boston Terrier/16.jpg
+!ml/data/val/Dog/bulldog/001.jpg
+!ml/data/val/Dog/Chow/011.jpg
+!ml/data/val/Dog/Elk Hound/005.jpg
+!ml/data/val/Dog/German Sheperd/002.jpg
+!ml/data/val/Dog/japanese/japanese_chin_1.jpg
+!ml/data/val/Dog/Maltese/008.jpg
+!ml/data/val/Dog/Pekinese/009.jpg
+!ml/data/val/Dog/Shiba Inu/05.jpg
+!ml/data/val/Dog/Shih-Tzu/001.jpg
+!ml/data/val/Fish/Anthias anthias/anthias_anthias-10.jpg
+!ml/data/val/Fish/Coris julis/coris_julis-1005.jpg
+!ml/data/val/Fish/Dasyatis centroura/dasyatis_centroura-0.jpg
+!ml/data/val/Fish/Gobius niger/gobius_niger-0.jpg
+!ml/data/val/Fish/Gold Fish/CommonCarp_129_jpg.rf.a90845a0e39812d22d82a9eeb32829ce.jpg
+!ml/data/val/Fish/Polyprion americanus/polyprion_americanus-1007.jpg
+!ml/data/val/Fish/Rhinobatos cemiculus/rhinobatos_cemiculus-10.jpg
+!ml/data/val/Fish/Solea solea/solea_solea-1009.jpg
+!ml/data/val/Fish/Tetrapturus belone/tetrapturus_belone-1.jpg
+!ml/data/val/Fish/Trigloporus lastoviza/trigloporus_lastoviza-1.jpg
+!ml/data/val/Monkey/Bald Uakari/BU (1000).jpeg
+!ml/data/val/Monkey/Emperor Tamarin/C.jpeg
+!ml/data/val/Monkey/Golden Monkey/GM (1080).jpeg
+!ml/data/val/Monkey/Hamadryas Baboon/HM (102).jpeg
+!ml/data/val/Monkey/Mandril/M (1001).jpeg
+!ml/data/val/Monkey/Proboscis Monkey/PM (1010).jpeg
+!ml/data/val/Monkey/Red Howler/RH (1001).jpeg
+!ml/data/val/Monkey/White Faced Saki/WFS (1310).jpeg
