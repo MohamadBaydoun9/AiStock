@@ -17,3 +17,5 @@ matplotlib
 scikit-learn
 
 python-dotenv
+motor
+email-validator

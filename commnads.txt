@@ -1,0 +1,24 @@
+backend 
+https://www.python.org/downloads/release/python-3110/
+python11 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
+python11 -m pip install -r requirements.txt
+
+uvicorn app.main:app --reload      //backend directory
+python11 -m app.seeds.seed_admin //backend directory
+
+
+
+frontend
+npm install --legacy-peer-deps
+npm run dev 
+
+
+
+Categories 
+Cat	
+Dog	
+Monkey	
+Fish	
+Bird
