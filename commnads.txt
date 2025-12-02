@@ -1,7 +1,7 @@
 backend 
 https://www.python.org/downloads/release/python-3110/
 python11 -m venv .venv
-.\.venv\Scripts\Activate.ps1
+.\.venv\Scripts\Activate
 Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
 python11 -m pip install -r requirements.txt
 
