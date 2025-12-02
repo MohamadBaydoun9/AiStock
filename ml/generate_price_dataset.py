@@ -376,64 +376,128 @@ def generate_metadata(pet_type, breed):
     Returns:
         dict: Metadata including age, weight, health, vaccination, country, price
     """
-    # Get breed characteristics or use defaults
+    # ---------- Defaults by type ----------
     default_weight = 20
+    min_price = 100  # default minimum price
+
     if pet_type == 'Cat':
         default_weight = 5
+        min_price = 80
     elif pet_type == 'Fish':
         default_weight = 0.1
+        min_price = 5
     elif pet_type == 'Bird':
         default_weight = 0.2
+        min_price = 20
     elif pet_type == 'Monkey':
         default_weight = 5
+        min_price = 1000
 
     # Try to find breed using normalized name
     normalized_breed = normalize_name(breed)
     breed_info = NORMALIZED_BREED_CHARS.get(normalized_breed)
 
-    # If not found, use defaults
     if not breed_info:
+        # Fallback if a folder exists but breed not configured
         breed_info = {
             'avg_weight': default_weight,
-            'base_price': 1000,
-            'price_range': 300
+            'base_price': min_price,
+            'price_range': min_price * 0.3
         }
 
-    # Get country of origin (randomly select from possible countries)
-    possible_countries = NORMALIZED_COUNTRY_MAP.get(normalized_breed, ['USA'])  # Default to USA
+    base_price = breed_info['base_price']
+    price_range = breed_info['price_range']
+
+    # ---------- SMALL vs BIG animal classification ----------
+    # Small animals: fish & birds, plus very cheap cats/dogs
+    if pet_type in ['Fish', 'Bird'] or base_price < 500:
+        size_class = 'small'
+    else:
+        size_class = 'big'
+
+    # ---------- Country ----------
+    possible_countries = NORMALIZED_COUNTRY_MAP.get(normalized_breed, ['USA'])
     country = random.choice(possible_countries)
     country_multiplier = COUNTRY_MULTIPLIERS.get(country, 1.0)
 
-    # Generate age (2-60 months, with bias towards younger)
+    # ---------- Age ----------
     age_months = random.choices(
         range(2, 61),
         weights=[3 if i < 12 else 2 if i < 24 else 1 for i in range(2, 61)]
     )[0]
 
-    # Generate weight with some variation around breed average
+    # Age factor: same for all, but reasonable
+    if age_months < 6:
+        age_factor = 1.3
+    elif age_months < 12:
+        age_factor = 1.1
+    elif age_months < 24:
+        age_factor = 1.0
+    else:
+        age_factor = 0.85
+
+    # ---------- Weight ----------
     weight = max(0.1, breed_info['avg_weight'] + random.uniform(-0.2, 0.2) * breed_info['avg_weight'])
     weight = round(weight, 2)
 
-    # Health status (0=normal, 1=good, 2=excellent)
+    # ---------- Health & vaccination ----------
+    # 0=normal, 1=good, 2=excellent
     health_status = random.choices([0, 1, 2], weights=[0.2, 0.5, 0.3])[0]
-
-    # Vaccination status
     vaccinated = random.choices([0, 1], weights=[0.15, 0.85])[0]
 
-    # Calculate price based on factors
-    base_price = breed_info['base_price']
-    price_range = breed_info['price_range']
+    # Percent-based bonuses, different for small vs big animals
+    if size_class == 'small':
+        # Small animals (fish, birds, cheap cats/dogs)
+        # Percent of base_price
+        health_bonus_pct_map = {
+            0: 0.00,   # normal
+            1: 0.10,   # good = +10%
+            2: 0.25    # excellent = +25%
+        }
+        vacc_bonus_pct = 0.10 if vaccinated else 0.0   # +10% if vaccinated
+        noise_pct = 0.15                               # ±15% random noise
+        max_multiplier = 2.5                           # hard cap base_price * 2.5
+    else:
+        # Big animals (most dogs, monkeys, expensive cats)
+        health_bonus_pct_map = {
+            0: 0.00,
+            1: 0.15,   # +15%
+            2: 0.35    # +35%
+        }
+        vacc_bonus_pct = 0.20 if vaccinated else 0.0   # +20%
+        noise_pct = 0.30                               # ±30% random noise
+        max_multiplier = 4.0                           # base_price * 4 cap
 
-    # Price factors:
-    age_factor = 1.3 if age_months < 6 else 1.1 if age_months < 12 else 1.0 if age_months < 24 else 0.85
-    health_bonus = health_status * 100
-    vaccination_bonus = 150 if vaccinated else 0
-    country_bonus = (base_price * (country_multiplier - 1.0))
+    health_bonus = base_price * health_bonus_pct_map[health_status]
+    vacc_bonus = base_price * vacc_bonus_pct
 
-    # Final price with some randomness
-    price = base_price * age_factor + health_bonus + vaccination_bonus + country_bonus
-    price += random.uniform(-price_range / 2, price_range / 2)
-    price = max(100, round(price, 2))  # Minimum $100
+    # ---------- Price computation ----------
+    # Start from base_price and apply factors and bonuses
+    price = base_price
+
+    # 1) age
+    price *= age_factor
+
+    # 2) country (prestige/exotic)
+    price *= country_multiplier
+
+    # 3) add health & vaccination bonuses as absolute amounts based on base_price
+    price += health_bonus + vacc_bonus
+
+    # 4) add random noise proportional to base_price
+    noise = random.uniform(-noise_pct, noise_pct) * base_price
+    price += noise
+
+    # 5) clamp by size-based maximum (relative cap)
+    price_cap = base_price * max_multiplier
+    price = min(price, price_cap)
+
+    # 6) special cap for Gold Fish so "best" ≈ <= 50 USD
+    if pet_type == 'Fish' and normalized_breed == normalize_name('Gold Fish'):
+        price = min(price, 50.0)
+
+    # 7) enforce minimum per type
+    price = max(min_price, round(price, 2))
 
     return {
         'age_months': age_months,
